@@ -1,27 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NT288WP4YR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NT288WP4YR');
-</script>
-  <link rel="manifest" href="manifest.json"/>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NT288WP4YR');</script>
+<link rel="manifest" href="manifest.json"/>
 <meta name="theme-color" content="#ff4d00"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="FreePDF"/>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7352879981287034" crossorigin="anonymous"></script>
-<meta name="keywords" content="free pdf converter,pdf to word,pdf to jpg,image compress,resize image,freepdfconverterr,merge pdf,split pdf,online pdf tools"/>
+<meta name="keywords" content="free pdf converter,pdf to word,pdf to jpg,image compress,resize image,freepdfconverterr,merge pdf,split pdf,rotate pdf,watermark pdf,jpg to png,png to jpg,online pdf tools"/>
 <meta name="author" content="Freepdfconverterr"/>
 <meta charset="UTF-8"/>
-  <meta name="google-site-verification" content="RLdnsNQ1xUJYmMq3_ajP6vR1COkTYaQDkvzhPJN4axU"/>
+<meta name="google-site-verification" content="RLdnsNQ1xUJYmMq3_ajP6vR1COkTYaQDkvzhPJN4axU"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Freepdfconverterr — Free PDF &amp; Image Tools Online</title>
-<meta name="description" content="Free online PDF and Image tools. Merge, split, compress, convert PDF and images. No signup required. 100% browser based."/>
+<meta name="description" content="Free online PDF and Image tools. Merge, split, compress, rotate, watermark, convert PDF and images. No signup required. 100% browser based."/>
 <link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
@@ -62,6 +55,12 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .u-menu a{display:block;padding:.42rem .75rem;font-size:.82rem;color:var(--txt);text-decoration:none;border-radius:7px;cursor:pointer;transition:background .15s}
 .u-menu a:hover{background:var(--sur)}
 .u-menu .logout{color:var(--acc)}
+/* SEARCH */
+.search-wrap{max-width:480px;margin:1.5rem auto 0;position:relative}
+.search-wrap input{width:100%;background:var(--sur);border:1px solid var(--bdr);color:var(--txt);border-radius:50px;padding:.7rem 1.2rem .7rem 2.8rem;font-size:.9rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
+.search-wrap input:focus{border-color:var(--acc)}
+.search-wrap input::placeholder{color:var(--mut)}
+.search-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--mut);font-size:.95rem;pointer-events:none}
 /* HERO */
 .hero{text-align:center;padding:5rem 2rem 3rem;position:relative;overflow:hidden}
 .hero-glow{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse,rgba(255,77,0,.14) 0%,transparent 70%);pointer-events:none}
@@ -69,6 +68,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,4rem);font-weight:800;line-height:1.05;letter-spacing:-.02em}
 h1 em{color:var(--acc);font-style:normal}
 .hero-sub{margin:.9rem auto 0;color:var(--mut);font-size:.97rem;max-width:460px}
+.hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
 .hero-stats{display:flex;justify-content:center;gap:2.5rem;margin-top:2rem;flex-wrap:wrap}
 .stat-num{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800}
 .stat-label{color:var(--mut);font-size:.76rem;margin-top:1px;text-align:center}
@@ -82,7 +82,7 @@ h1 em{color:var(--acc);font-style:normal}
 .section{max-width:1080px;margin:0 auto;padding:0 1.5rem 4rem}
 .section-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:.25rem}
 .section-sub{color:var(--mut);font-size:.87rem;margin-bottom:1.8rem}
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1rem}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
 .tool-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:1.3rem;cursor:pointer;transition:all .22s;position:relative}
 .tool-card:hover{border-color:var(--acc);transform:translateY(-3px);box-shadow:0 10px 30px rgba(255,77,0,.1)}
 .tool-card.hidden{display:none}
@@ -97,6 +97,9 @@ h1 em{color:var(--acc);font-style:normal}
 .tool-cat{font-size:.71rem;color:var(--mut)}
 .btn-report-tool{background:none;border:none;color:var(--mut);font-size:.71rem;cursor:pointer;padding:0;display:flex;align-items:center;gap:3px;transition:color .2s}
 .btn-report-tool:hover{color:var(--warn)}
+/* NO RESULTS */
+.no-results{text-align:center;padding:3rem 1rem;color:var(--mut);display:none}
+.no-results.show{display:block}
 /* HOW */
 .how-sec{background:var(--sur);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:3.5rem 2rem;text-align:center}
 .how-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1.5rem;margin-top:2rem;max-width:750px;margin-left:auto;margin-right:auto}
@@ -133,13 +136,13 @@ h1 em{color:var(--acc);font-style:normal}
 .auth-switch span{color:var(--acc);cursor:pointer;font-weight:600}
 .forgot-link{font-size:.77rem;color:var(--acc);cursor:pointer}
 /* DROPZONE */
-.dropzone{border:2px dashed var(--bdr);border-radius:12px;padding:1.7rem 1rem;text-align:center;cursor:pointer;transition:all .22s;position:relative;margin-bottom:.6rem}
+.dropzone{border:2px dashed var(--bdr);border-radius:12px;padding:2rem 1rem;text-align:center;cursor:pointer;transition:all .22s;position:relative;margin-bottom:.6rem}
 .dropzone:hover,.dropzone.dragover{border-color:var(--acc);background:rgba(255,77,0,.04)}
 .dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.dz-icon{font-size:1.8rem;margin-bottom:.45rem}
+.dz-icon{font-size:2.2rem;margin-bottom:.6rem}
 .dz-text{font-size:.87rem;color:var(--mut)}
 .dz-text strong{color:var(--txt)}
-.dz-fmt{font-size:.72rem;color:var(--mut);margin-top:.2rem}
+.dz-fmt{font-size:.72rem;color:var(--mut);margin-top:.3rem;background:var(--sur);display:inline-block;padding:2px 8px;border-radius:99px;margin-top:.5rem}
 /* FILE LIST */
 .file-list{display:flex;flex-direction:column;gap:.4rem;margin-bottom:.4rem}
 .fi{display:flex;align-items:center;gap:.65rem;background:var(--sur);border:1px solid var(--bdr);border-radius:9px;padding:.55rem .8rem}
@@ -147,22 +150,23 @@ h1 em{color:var(--acc);font-style:normal}
 .fi-info{flex:1;min-width:0}
 .fi-name{font-size:.82rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fi-size{font-size:.71rem;color:var(--mut)}
-.fi-rm{cursor:pointer;color:var(--mut);font-size:.88rem;flex-shrink:0;padding:0 3px;transition:color .2s}
-.fi-rm:hover{color:var(--acc)}
+.fi-rm{cursor:pointer;color:var(--mut);font-size:.88rem;flex-shrink:0;padding:2px 6px;border-radius:50%;background:var(--bdr);transition:all .2s}
+.fi-rm:hover{color:#fff;background:var(--acc)}
 /* OPTS */
 .opts{background:var(--sur);border-radius:10px;padding:.85rem;margin-bottom:.6rem}
+.opts-title{font-size:.78rem;font-weight:700;color:var(--txt);margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.05em}
 .opts label{display:block;font-size:.79rem;color:var(--mut);margin-bottom:.28rem;font-weight:600}
 .opts input,.opts select{width:100%;background:var(--card);border:1px solid var(--bdr);color:var(--txt);border-radius:8px;padding:.46rem .68rem;font-size:.84rem;margin-bottom:.55rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
 .opts input:focus,.opts select:focus{border-color:var(--acc)}
 .opts input:last-child,.opts select:last-child{margin-bottom:0}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
 .qrow{display:flex;align-items:center;gap:.6rem}
-.qrow input[type=range]{flex:1}
-.qval{font-size:.84rem;font-weight:700;color:var(--acc);min-width:36px;text-align:right}
+.qrow input[type=range]{flex:1;accent-color:var(--acc)}
+.qval{font-size:.84rem;font-weight:700;color:var(--acc);min-width:40px;text-align:right}
 /* PROGRESS */
-.prog-wrap{display:none;margin-bottom:.5rem}
+.prog-wrap{display:none;margin-bottom:.5rem;background:var(--sur);border-radius:10px;padding:.8rem}
 .prog-wrap.show{display:block}
-.prog-bg{background:var(--sur);border-radius:99px;height:7px;overflow:hidden;margin-bottom:.32rem}
+.prog-bg{background:var(--bdr);border-radius:99px;height:8px;overflow:hidden;margin-bottom:.4rem}
 .prog-bar{height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));border-radius:99px;width:0%;transition:width .25s}
 .prog-txt{font-size:.77rem;color:var(--mut);text-align:center}
 /* RESULTS */
@@ -176,14 +180,16 @@ h1 em{color:var(--acc);font-style:normal}
 .btn-dl{background:var(--ok);color:#0a0a0f;border:none;border-radius:8px;padding:.42rem .88rem;font-family:'Syne',sans-serif;font-size:.79rem;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;flex-shrink:0;display:inline-block}
 .btn-dl:hover{opacity:.9}
 /* BUTTONS */
-.btn-primary{display:block;width:100%;background:var(--acc);color:#fff;border:none;border-radius:11px;padding:.82rem;font-family:'Syne',sans-serif;font-size:.94rem;font-weight:700;cursor:pointer;transition:all .22s;margin-top:.5rem}
-.btn-primary:hover{background:var(--acc2)}
-.btn-primary:disabled{opacity:.4;cursor:not-allowed}
+.btn-primary{display:block;width:100%;background:var(--acc);color:#fff;border:none;border-radius:11px;padding:.82rem;font-family:'Syne',sans-serif;font-size:.94rem;font-weight:700;cursor:pointer;transition:all .22s;margin-top:.5rem;text-align:center}
+.btn-primary:hover{background:var(--acc2);transform:translateY(-1px)}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .btn-outline{display:block;width:100%;background:transparent;color:var(--acc);border:1px solid var(--acc);border-radius:11px;padding:.72rem;font-family:'Syne',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s;margin-top:.45rem;text-align:center}
 .btn-outline:hover{background:rgba(255,77,0,.07)}
 .btn-add{display:block;width:100%;background:transparent;color:var(--acc);border:1px dashed var(--acc);border-radius:11px;padding:.6rem;font-family:'Syne',sans-serif;font-size:.86rem;font-weight:600;cursor:pointer;margin-top:.35rem;text-align:center;position:relative;transition:all .2s}
 .btn-add:hover{background:rgba(255,77,0,.07)}
 .btn-add input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.btn-green{display:inline-block;background:var(--ok);color:#0a0a0f;padding:.7rem 1.8rem;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;border:none;cursor:pointer;transition:opacity .2s}
+.btn-green:hover{opacity:.85}
 /* CHIPS */
 .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem}
 .chip{background:var(--sur);border:1px solid var(--bdr);color:var(--mut);padding:.28rem .75rem;border-radius:99px;font-size:.77rem;cursor:pointer;transition:all .2s}
@@ -220,11 +226,11 @@ footer strong{color:var(--txt)}
   .modal{padding:1.3rem}
   .form-row,.row2{grid-template-columns:1fr}
   .btn-login{display:none}
+  .hero-btns{flex-direction:column;align-items:center}
 }
 </style>
 </head>
 <body>
-
 <div class="toast-wrap" id="toastWrap"></div>
 
 <!-- ADBLOCK OVERLAY -->
@@ -232,7 +238,7 @@ footer strong{color:var(--txt)}
   <div class="ab-box">
     <div class="ab-icon">🛡️</div>
     <div class="ab-title">Disable <span>Ad Blocker</span></div>
-    <div class="ab-desc">Our tools are 100% free forever. Small ads keep this site running. Please whitelist us to continue!</div>
+    <div class="ab-desc">Our tools are 100% free forever. Small ads keep this site running. Please whitelist us!</div>
     <div class="ab-steps">
       <div class="ab-step"><div class="ab-n">1</div><div>Click the <strong>Ad Blocker icon</strong> in your browser toolbar</div></div>
       <div class="ab-step"><div class="ab-n">2</div><div>Tap <strong>"Disable on this site"</strong> or <strong>"Whitelist"</strong></div></div>
@@ -266,17 +272,19 @@ footer strong{color:var(--txt)}
 <div id="mainWrap">
   <section class="hero">
     <div class="hero-glow"></div>
-    <div class="hero-tag">⚡ 100% Browser · No Server Upload · Instant</div>
+    <div class="hero-tag">⚡ 25+ Free Tools · No Upload · Instant</div>
     <h1>Free PDF &amp; Image<br/><em>Tools Online</em></h1>
-    <p class="hero-sub">All processing happens on your device. No account needed, no watermark, no limits.</p>
-
-<a href="app.apk" download="FreePDFConverterr.apk" 
-style="display:inline-block;background:#00e5a0;color:#0a0a0f;padding:.7rem 1.8rem;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;margin-top:1rem;">
-📱 Download App (Android)
-</a>
-
-<div class="hero-stats">
-      <div class="stat"><div class="stat-num">16+</div><div class="stat-label">Working Tools</div></div>
+    <p class="hero-sub">All processing happens on your device. No account needed, no watermark, no limits — forever free.</p>
+    <div class="hero-btns">
+      <a href="#tools" style="display:inline-block;background:var(--acc);color:#fff;padding:.7rem 1.8rem;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;">🚀 Use Free Tools</a>
+      <a href="app.apk" download="FreePDFConverterr.apk" class="btn-green">📱 Download App (Android)</a>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Search tools... e.g. merge, compress, rotate" oninput="searchTools(this.value)"/>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Free Tools</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Browser Based</div></div>
       <div class="stat"><div class="stat-num">0</div><div class="stat-label">Server Uploads</div></div>
     </div>
@@ -284,7 +292,7 @@ style="display:inline-block;background:#00e5a0;color:#0a0a0f;padding:.7rem 1.8re
 
   <div class="ad-banner">📢 Advertisement — Google AdSense</div>
 
-  <div class="tabs-wrap">
+  <div class="tabs-wrap" id="tools">
     <button class="tab-btn active" onclick="filterTools('all',this)">🔥 All Tools</button>
     <button class="tab-btn" onclick="filterTools('pdf',this)">📄 PDF Tools</button>
     <button class="tab-btn" onclick="filterTools('image',this)">🖼️ Image Tools</button>
@@ -292,17 +300,18 @@ style="display:inline-block;background:#00e5a0;color:#0a0a0f;padding:.7rem 1.8re
 
   <section class="section">
     <div class="section-title" id="gridTitle">All Tools</div>
-    <p class="section-sub">Tap any tool — your files never leave your device!</p>
+    <p class="section-sub" id="gridSub">Tap any tool — your files never leave your device!</p>
     <div class="tools-grid" id="toolsGrid"></div>
+    <div class="no-results" id="noResults">😕 No tools found. Try a different search!</div>
   </section>
 
   <section class="how-sec">
     <div style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:.3rem">How It Works</div>
-    <p style="color:var(--mut);font-size:.86rem">Everything runs in YOUR browser — files stay private</p>
+    <p style="color:var(--mut);font-size:.86rem">Everything runs in YOUR browser — files stay 100% private</p>
     <div class="how-steps">
       <div><div class="how-num">01</div><div class="how-title">Pick a Tool</div><div class="how-desc">Choose any PDF or Image tool from the grid above.</div></div>
-      <div><div class="how-num">02</div><div class="how-title">Upload Files</div><div class="how-desc">Select one or multiple files. Drag &amp; drop supported.</div></div>
-      <div><div class="how-num">03</div><div class="how-title">Download</div><div class="how-desc">Processed instantly in browser. Download your result!</div></div>
+      <div><div class="how-num">02</div><div class="how-title">Upload File</div><div class="how-desc">Drag &amp; drop or tap to select. No size limits!</div></div>
+      <div><div class="how-num">03</div><div class="how-title">Download</div><div class="how-desc">Processed instantly in your browser. 100% private!</div></div>
     </div>
   </section>
 
@@ -404,22 +413,17 @@ style="display:inline-block;background:#00e5a0;color:#0a0a0f;padding:.7rem 1.8re
 </footer>
 
 <script>
-// ═══════════════════════════════════════════════
-// LOAD LIBRARIES
-// ═══════════════════════════════════════════════
-var PDFLIB_CDN  = 'https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';
-var PDFJS_CDN   = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
-var PDFJS_WKR   = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+var PDFLIB_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';
+var PDFJS_CDN  = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+var PDFJS_WKR  = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 var libsOK = false;
 
 function loadScript(src, cb) {
   var s = document.createElement('script');
-  s.src = src;
-  s.onload = cb;
-  s.onerror = function(){ console.warn('Failed: ' + src); cb(); };
+  s.src = src; s.onload = cb;
+  s.onerror = function(){ console.warn('Failed: '+src); cb(); };
   document.head.appendChild(s);
 }
-
 loadScript(PDFLIB_CDN, function(){
   loadScript(PDFJS_CDN, function(){
     if (window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WKR;
@@ -429,41 +433,45 @@ loadScript(PDFLIB_CDN, function(){
   });
 });
 
-// ═══════════════════════════════════════════════
-// TOOLS CONFIG
-// ═══════════════════════════════════════════════
+// ═══ TOOLS CONFIG ═══
 var TOOLS = [
-  {id:'merge',       cat:'pdf',   icon:'🗂️', bg:'rgba(100,100,255,0.12)', badge:'hot',  label:'🔥 Popular', name:'Merge PDF',          desc:'Combine multiple PDFs into one document. Select as many files as you want!', accept:'.pdf',     multi:true,  opts:'none'},
-  {id:'split',       cat:'pdf',   icon:'✂️', bg:'rgba(255,200,0,0.1)',   badge:'free', label:'Free',       name:'Split PDF',          desc:'Extract specific pages or a page range from a PDF.',                        accept:'.pdf',     multi:false, opts:'split'},
-  {id:'rotate',      cat:'pdf',   icon:'🔃', bg:'rgba(180,100,255,0.1)', badge:'free', label:'Free',       name:'Rotate PDF',         desc:'Rotate all pages in a PDF by 90°, 180° or 270°.',                           accept:'.pdf',     multi:false, opts:'rotate'},
-  {id:'pdf2jpg',     cat:'pdf',   icon:'🖼️',bg:'rgba(255,140,66,0.12)', badge:'hot',  label:'🔥 Popular', name:'PDF to JPG',          desc:'Convert every page of a PDF into a JPG image.',                             accept:'.pdf',     multi:false, opts:'quality'},
-  {id:'jpg2pdf',     cat:'pdf',   icon:'🔄', bg:'rgba(0,229,160,0.1)',   badge:'free', label:'Free',       name:'Images to PDF',       desc:'Combine one or more JPG/PNG images into a single PDF.',                     accept:'image/*',  multi:true,  opts:'none'},
-  {id:'watermarkpdf',cat:'pdf',   icon:'💧', bg:'rgba(255,77,0,0.12)',   badge:'free', label:'Free',       name:'Watermark PDF',       desc:'Stamp a custom text watermark on every page of your PDF.',                  accept:'.pdf',     multi:false, opts:'wmpdf'},
-  {id:'compress',    cat:'image', icon:'🗜️',bg:'rgba(0,229,160,0.12)',  badge:'hot',  label:'🔥 Popular', name:'Compress Image',      desc:'Reduce image file size by choosing a quality level.',                       accept:'image/*',  multi:false, opts:'quality'},
-  {id:'resize',      cat:'image', icon:'📐', bg:'rgba(77,143,255,0.12)', badge:'new',  label:'✨ New',      name:'Resize Image',        desc:'Resize image to exact pixel width and height.',                             accept:'image/*',  multi:false, opts:'resize'},
-  {id:'crop',        cat:'image', icon:'✂️', bg:'rgba(168,85,247,0.12)', badge:'new',  label:'✨ New',      name:'Crop Image',          desc:'Crop image by entering exact pixel coordinates.',                           accept:'image/*',  multi:false, opts:'crop'},
-  {id:'jpg2png',     cat:'image', icon:'🔁', bg:'rgba(255,77,143,0.12)', badge:'free', label:'Free',       name:'JPG to PNG',          desc:'Convert JPG images to transparent PNG format.',                             accept:'.jpg,.jpeg',multi:true, opts:'none'},
-  {id:'png2jpg',     cat:'image', icon:'🔀', bg:'rgba(255,200,0,0.1)',   badge:'free', label:'Free',       name:'PNG to JPG',          desc:'Convert PNG to JPG to reduce file size easily.',                            accept:'.png',     multi:true,  opts:'quality'},
-  {id:'watermarkimg',cat:'image', icon:'💧', bg:'rgba(255,77,0,0.1)',    badge:'free', label:'Free',       name:'Watermark Image',     desc:'Add a custom text watermark to protect your images.',                       accept:'image/*',  multi:false, opts:'wmimg'},
-  {id:'grayscale',   cat:'image', icon:'⬛', bg:'rgba(150,150,150,0.12)',badge:'new',  label:'✨ New',      name:'Image to Grayscale',  desc:'Convert color images to beautiful black and white.',                        accept:'image/*',  multi:true,  opts:'none'},
-  {id:'flip',        cat:'image', icon:'🔄', bg:'rgba(0,200,255,0.1)',   badge:'new',  label:'✨ New',      name:'Flip Image',          desc:'Flip images horizontally or vertically in one click.',                      accept:'image/*',  multi:false, opts:'flip'},
-  {id:'rotateimg',   cat:'image', icon:'🔃', bg:'rgba(255,140,0,0.1)',   badge:'free', label:'Free',       name:'Rotate Image',        desc:'Rotate images 90°, 180° or 270° for free.',                                accept:'image/*',  multi:false, opts:'rotimg'},
-  {id:'brightness',  cat:'image', icon:'☀️', bg:'rgba(255,230,0,0.1)',   badge:'new',  label:'✨ New',      name:'Brightness & Contrast',desc:'Adjust brightness and contrast of your images easily.',                   accept:'image/*',  multi:false, opts:'bright'},
+  // PDF
+  {id:'merge',       cat:'pdf',   icon:'🗂️', bg:'rgba(100,100,255,0.12)', badge:'hot',  label:'🔥 Popular', name:'Merge PDF',           desc:'Combine multiple PDFs into one document instantly.', accept:'.pdf', multi:true,  opts:'none'},
+  {id:'split',       cat:'pdf',   icon:'✂️', bg:'rgba(255,200,0,0.1)',   badge:'free', label:'Free',       name:'Split PDF',           desc:'Extract a page range or specific pages from a PDF.', accept:'.pdf', multi:false, opts:'split'},
+  {id:'rotate',      cat:'pdf',   icon:'🔃', bg:'rgba(180,100,255,0.1)', badge:'free', label:'Free',       name:'Rotate PDF',          desc:'Rotate all pages 90°, 180° or 270° clockwise.',      accept:'.pdf', multi:false, opts:'rotate'},
+  {id:'compress',    cat:'pdf',   icon:'🗜️',bg:'rgba(0,229,160,0.12)',  badge:'hot',  label:'🔥 Popular', name:'Compress PDF',        desc:'Reduce PDF file size while keeping good quality.',   accept:'.pdf', multi:false, opts:'pdfquality'},
+  {id:'pdf2jpg',     cat:'pdf',   icon:'🖼️',bg:'rgba(255,140,66,0.12)', badge:'hot',  label:'🔥 Popular', name:'PDF to JPG',           desc:'Convert every page of a PDF into a JPG image.',      accept:'.pdf', multi:false, opts:'quality'},
+  {id:'jpg2pdf',     cat:'pdf',   icon:'🔄', bg:'rgba(0,229,160,0.1)',   badge:'free', label:'Free',       name:'Images to PDF',        desc:'Combine JPG/PNG images into a single PDF.',          accept:'image/*', multi:true, opts:'none'},
+  {id:'watermarkpdf',cat:'pdf',   icon:'💧', bg:'rgba(255,77,0,0.12)',   badge:'free', label:'Free',       name:'Watermark PDF',        desc:'Stamp custom text watermark on every PDF page.',     accept:'.pdf', multi:false, opts:'wmpdf'},
+  {id:'pagenumbers', cat:'pdf',   icon:'🔢', bg:'rgba(77,143,255,0.12)', badge:'new',  label:'✨ New',      name:'Add Page Numbers',     desc:'Add page numbers to every page of your PDF.',        accept:'.pdf', multi:false, opts:'pagenum'},
+  {id:'grayscalepdf',cat:'pdf',   icon:'⬛', bg:'rgba(150,150,150,0.1)', badge:'new',  label:'✨ New',      name:'Grayscale PDF',        desc:'Convert a colorful PDF to black and white.',         accept:'.pdf', multi:false, opts:'none'},
+  {id:'protectpdf',  cat:'pdf',   icon:'🔒', bg:'rgba(255,77,0,0.1)',    badge:'new',  label:'✨ New',      name:'Protect PDF',          desc:'Add a password to lock and protect your PDF.',       accept:'.pdf', multi:false, opts:'protect'},
+  // IMAGE
+  {id:'imgcompress', cat:'image', icon:'🗜️',bg:'rgba(0,229,160,0.12)',  badge:'hot',  label:'🔥 Popular', name:'Compress Image',       desc:'Reduce image size by choosing a quality level.',     accept:'image/*', multi:false, opts:'quality'},
+  {id:'resize',      cat:'image', icon:'📐', bg:'rgba(77,143,255,0.12)', badge:'free', label:'Free',       name:'Resize Image',         desc:'Resize image to exact pixel dimensions.',            accept:'image/*', multi:false, opts:'resize'},
+  {id:'crop',        cat:'image', icon:'✂️', bg:'rgba(168,85,247,0.12)', badge:'free', label:'Free',       name:'Crop Image',           desc:'Crop image by entering exact pixel coordinates.',    accept:'image/*', multi:false, opts:'crop'},
+  {id:'jpg2png',     cat:'image', icon:'🔁', bg:'rgba(255,77,143,0.12)', badge:'free', label:'Free',       name:'JPG to PNG',           desc:'Convert JPG images to transparent PNG format.',      accept:'.jpg,.jpeg', multi:true, opts:'none'},
+  {id:'png2jpg',     cat:'image', icon:'🔀', bg:'rgba(255,200,0,0.1)',   badge:'free', label:'Free',       name:'PNG to JPG',           desc:'Convert PNG to JPG to reduce file size.',            accept:'.png', multi:true, opts:'quality'},
+  {id:'webp2jpg',    cat:'image', icon:'🔄', bg:'rgba(0,200,255,0.1)',   badge:'new',  label:'✨ New',      name:'WebP to JPG',          desc:'Convert WebP images to JPG format easily.',          accept:'.webp', multi:true, opts:'none'},
+  {id:'jpg2webp',    cat:'image', icon:'🌐', bg:'rgba(100,200,100,0.1)', badge:'new',  label:'✨ New',      name:'JPG to WebP',          desc:'Convert JPG to WebP for faster websites.',           accept:'.jpg,.jpeg,.png', multi:true, opts:'quality'},
+  {id:'watermarkimg',cat:'image', icon:'💧', bg:'rgba(255,77,0,0.1)',    badge:'free', label:'Free',       name:'Watermark Image',      desc:'Add custom text watermark to protect your images.',  accept:'image/*', multi:false, opts:'wmimg'},
+  {id:'grayscale',   cat:'image', icon:'🖤', bg:'rgba(150,150,150,0.12)',badge:'free', label:'Free',       name:'Image to Grayscale',   desc:'Convert color images to beautiful black and white.', accept:'image/*', multi:true, opts:'none'},
+  {id:'flip',        cat:'image', icon:'🔄', bg:'rgba(0,200,255,0.1)',   badge:'free', label:'Free',       name:'Flip Image',           desc:'Flip images horizontally or vertically.',            accept:'image/*', multi:false, opts:'flip'},
+  {id:'rotateimg',   cat:'image', icon:'🔃', bg:'rgba(255,140,0,0.1)',   badge:'free', label:'Free',       name:'Rotate Image',         desc:'Rotate images 90°, 180° or 270° for free.',          accept:'image/*', multi:false, opts:'rotimg'},
+  {id:'brightness',  cat:'image', icon:'☀️', bg:'rgba(255,230,0,0.1)',   badge:'new',  label:'✨ New',      name:'Brightness & Contrast',desc:'Adjust brightness and contrast of your images.',     accept:'image/*', multi:false, opts:'bright'},
+  {id:'sharpen',     cat:'image', icon:'🔆', bg:'rgba(255,100,100,0.1)', badge:'new',  label:'✨ New',      name:'Sharpen Image',        desc:'Make blurry images sharp and clear.',                accept:'image/*', multi:false, opts:'none'},
+  {id:'blur',        cat:'image', icon:'🌫️',bg:'rgba(100,100,255,0.1)', badge:'new',  label:'✨ New',      name:'Blur Image',           desc:'Add blur effect to your images.',                    accept:'image/*', multi:false, opts:'bluropt'},
+  {id:'imgpdf',      cat:'image', icon:'📄', bg:'rgba(255,77,143,0.1)',  badge:'new',  label:'✨ New',      name:'Image to PDF',         desc:'Convert a single image to a PDF document.',          accept:'image/*', multi:false, opts:'none'},
 ];
 
-// ═══════════════════════════════════════════════
-// STATE
-// ═══════════════════════════════════════════════
+// ═══ STATE ═══
 var currentUser = null;
 var currentTool = null;
 var toolFiles   = [];
 var repToolName = '';
-
 try { currentUser = JSON.parse(localStorage.getItem('fpdf_user') || 'null'); } catch(e){}
 
-// ═══════════════════════════════════════════════
-// ADBLOCK
-// ═══════════════════════════════════════════════
+// ═══ ADBLOCK ═══
 function detectAB() {
   var bait = document.createElement('div');
   bait.className = 'adsbox pub_300x250 text-ad ad-slot';
@@ -471,8 +479,7 @@ function detectAB() {
   bait.innerHTML = '&nbsp;';
   document.body.appendChild(bait);
   setTimeout(function(){
-    var blocked = !bait.offsetHeight || !bait.offsetParent ||
-      window.getComputedStyle(bait).display === 'none';
+    var blocked = !bait.offsetHeight || !bait.offsetParent || window.getComputedStyle(bait).display === 'none';
     if (blocked) document.getElementById('abOv').classList.add('show');
     try { document.body.removeChild(bait); } catch(e){}
   }, 200);
@@ -483,9 +490,25 @@ function dismissAb() {
 }
 window.addEventListener('load', function(){ setTimeout(detectAB, 1500); });
 
-// ═══════════════════════════════════════════════
-// BUILD GRID
-// ═══════════════════════════════════════════════
+// ═══ SEARCH ═══
+function searchTools(q) {
+  q = q.toLowerCase().trim();
+  var cards = document.querySelectorAll('.tool-card');
+  var count = 0;
+  cards.forEach(function(c){
+    var name = c.querySelector('.tool-name').textContent.toLowerCase();
+    var desc = c.querySelector('.tool-desc').textContent.toLowerCase();
+    var show = !q || name.includes(q) || desc.includes(q);
+    c.classList.toggle('hidden', !show);
+    if (show) count++;
+  });
+  document.getElementById('noResults').classList.toggle('show', count === 0 && q.length > 0);
+  // reset tabs
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  if (!q) document.querySelectorAll('.tab-btn')[0].classList.add('active');
+}
+
+// ═══ BUILD GRID ═══
 function buildGrid() {
   var grid = document.getElementById('toolsGrid');
   grid.innerHTML = '';
@@ -493,14 +516,15 @@ function buildGrid() {
     var card = document.createElement('div');
     card.className = 'tool-card';
     card.dataset.cat = t.cat;
+    card.dataset.name = t.name.toLowerCase();
     card.innerHTML =
-      '<span class="tool-badge badge-' + t.badge + '">' + t.label + '</span>' +
-      '<div class="tool-icon" style="background:' + t.bg + '">' + t.icon + '</div>' +
-      '<div class="tool-name">' + t.name + '</div>' +
-      '<div class="tool-desc">' + t.desc + '</div>' +
-      '<div class="tool-foot">' +
-        '<span class="tool-cat">' + (t.cat === 'pdf' ? '📄 PDF' : '🖼️ Image') + '</span>' +
-        '<button class="btn-report-tool" onclick="openRep(event,\'' + t.name + '\')">⚑ Report</button>' +
+      '<span class="tool-badge badge-'+t.badge+'">'+t.label+'</span>'+
+      '<div class="tool-icon" style="background:'+t.bg+'">'+t.icon+'</div>'+
+      '<div class="tool-name">'+t.name+'</div>'+
+      '<div class="tool-desc">'+t.desc+'</div>'+
+      '<div class="tool-foot">'+
+        '<span class="tool-cat">'+(t.cat==='pdf'?'📄 PDF':'🖼️ Image')+'</span>'+
+        '<button class="btn-report-tool" onclick="openRep(event,\''+t.name+'\')">⚑ Report</button>'+
       '</div>';
     card.addEventListener('click', function(e){
       if (e.target.closest('.btn-report-tool')) return;
@@ -508,11 +532,14 @@ function buildGrid() {
     });
     grid.appendChild(card);
   });
+  document.querySelector('.stat-num').textContent = TOOLS.length + '+';
 }
 
 function filterTools(cat, btn) {
   document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
+  document.getElementById('searchInput').value = '';
+  document.getElementById('noResults').classList.remove('show');
   document.querySelectorAll('.tool-card').forEach(function(c){
     c.classList.toggle('hidden', cat !== 'all' && c.dataset.cat !== cat);
   });
@@ -520,60 +547,53 @@ function filterTools(cat, btn) {
   document.getElementById('gridTitle').textContent = titles[cat];
 }
 
-// ═══════════════════════════════════════════════
-// OPTS HTML
-// ═══════════════════════════════════════════════
+// ═══ OPTS HTML ═══
 function getOptsHTML(opts) {
-  if (opts === 'quality') return '<div class="opts"><label>Quality / Scale</label><div class="qrow"><input type="range" id="optQ" min="10" max="100" value="85" oninput="document.getElementById(\'qv\').textContent=this.value+\'%\'"/><span class="qval" id="qv">85%</span></div></div>';
-  if (opts === 'split')   return '<div class="opts"><label>From Page</label><input type="number" id="optFrom" value="1" min="1"/><label>To Page (leave 0 for last page)</label><input type="number" id="optTo" value="0" min="0"/></div>';
-  if (opts === 'rotate')  return '<div class="opts"><label>Rotation Angle</label><select id="optRot"><option value="90">90° Clockwise</option><option value="180">180°</option><option value="270">270° Counter-clockwise</option></select></div>';
-  if (opts === 'wmpdf')   return '<div class="opts"><label>Watermark Text</label><input type="text" id="optWM" placeholder="e.g. CONFIDENTIAL" value="WATERMARK"/><label>Font Size</label><input type="number" id="optWMSize" value="48" min="12" max="120"/></div>';
-  if (opts === 'resize')  return '<div class="opts"><div class="row2"><div><label>New Width (px)</label><input type="number" id="optW" placeholder="e.g. 800"/></div><div><label>New Height (px)</label><input type="number" id="optH" placeholder="e.g. 600"/></div></div><label>Keep Aspect Ratio</label><select id="optAR"><option value="1">Yes — keep proportions</option><option value="0">No — use exact values</option></select></div>';
-  if (opts === 'crop')    return '<div class="opts"><div class="row2"><div><label>X — Left (px)</label><input type="number" id="optX" value="0" min="0"/></div><div><label>Y — Top (px)</label><input type="number" id="optY" value="0" min="0"/></div></div><div class="row2"><div><label>Crop Width (px)</label><input type="number" id="optCW" placeholder="full width"/></div><div><label>Crop Height (px)</label><input type="number" id="optCH" placeholder="full height"/></div></div></div>';
-  if (opts === 'wmimg')   return '<div class="opts"><label>Watermark Text</label><input type="text" id="optIMGWM" placeholder="© Freepdfconverterr" value="© Freepdfconverterr"/><label>Text Color</label><select id="optWMC"><option value="white">White</option><option value="black">Black</option><option value="#ff4d00">Orange</option></select></div>';
-  if (opts === 'flip')    return '<div class="opts"><label>Flip Direction</label><select id="optFlip"><option value="h">Horizontal (Left ↔ Right)</option><option value="v">Vertical (Up ↕ Down)</option></select></div>';
-  if (opts === 'rotimg')  return '<div class="opts"><label>Rotation Angle</label><select id="optRotI"><option value="90">90° Clockwise</option><option value="180">180°</option><option value="270">270° Counter-clockwise</option></select></div>';
-  if (opts === 'bright')  return '<div class="opts"><label>Brightness (-100 to +100)</label><div class="qrow"><input type="range" id="optB" min="-100" max="100" value="0" oninput="document.getElementById(\'bv\').textContent=this.value"/><span class="qval" id="bv">0</span></div><label style="margin-top:.5rem;display:block">Contrast (-100 to +100)</label><div class="qrow"><input type="range" id="optC" min="-100" max="100" value="0" oninput="document.getElementById(\'cv\').textContent=this.value"/><span class="qval" id="cv">0</span></div></div>';
+  if (opts === 'quality')    return '<div class="opts"><div class="opts-title">⚙️ Options</div><label>Quality (higher = better quality, larger file)</label><div class="qrow"><input type="range" id="optQ" min="10" max="100" value="85" oninput="document.getElementById(\'qv\').textContent=this.value+\'%\'"/><span class="qval" id="qv">85%</span></div></div>';
+  if (opts === 'pdfquality') return '<div class="opts"><div class="opts-title">⚙️ Options</div><label>Compression Level</label><select id="optPQ"><option value="high">High Compression (smaller file)</option><option value="med" selected>Medium (balanced)</option><option value="low">Low Compression (better quality)</option></select></div>';
+  if (opts === 'split')      return '<div class="opts"><div class="opts-title">⚙️ Page Range</div><div class="row2"><div><label>From Page</label><input type="number" id="optFrom" value="1" min="1"/></div><div><label>To Page (0 = last)</label><input type="number" id="optTo" value="0" min="0"/></div></div></div>';
+  if (opts === 'rotate')     return '<div class="opts"><div class="opts-title">⚙️ Options</div><label>Rotation Angle</label><select id="optRot"><option value="90">90° Clockwise ↻</option><option value="180">180° Flip</option><option value="270">270° Counter-clockwise ↺</option></select></div>';
+  if (opts === 'wmpdf')      return '<div class="opts"><div class="opts-title">⚙️ Watermark Settings</div><label>Watermark Text</label><input type="text" id="optWM" placeholder="e.g. CONFIDENTIAL" value="WATERMARK"/><label>Font Size</label><input type="number" id="optWMSize" value="48" min="12" max="120"/></div>';
+  if (opts === 'pagenum')    return '<div class="opts"><div class="opts-title">⚙️ Page Number Settings</div><label>Position</label><select id="optPNPos"><option value="bottom-center">Bottom Center</option><option value="bottom-right">Bottom Right</option><option value="bottom-left">Bottom Left</option><option value="top-center">Top Center</option></select><label>Starting Number</label><input type="number" id="optPNStart" value="1" min="1"/></div>';
+  if (opts === 'protect')    return '<div class="opts"><div class="opts-title">🔒 Password Protection</div><label>Password</label><input type="password" id="optPwd" placeholder="Enter password"/><label>Confirm Password</label><input type="password" id="optPwd2" placeholder="Confirm password"/><p style="color:var(--mut);font-size:.75rem;margin-top:.3rem">⚠️ Browser-based encryption. For strong security use Adobe Acrobat.</p></div>';
+  if (opts === 'resize')     return '<div class="opts"><div class="opts-title">⚙️ New Size</div><div class="row2"><div><label>Width (px)</label><input type="number" id="optW" placeholder="e.g. 800"/></div><div><label>Height (px)</label><input type="number" id="optH" placeholder="e.g. 600"/></div></div><label>Keep Aspect Ratio</label><select id="optAR"><option value="1">Yes — keep proportions</option><option value="0">No — use exact values</option></select></div>';
+  if (opts === 'crop')       return '<div class="opts"><div class="opts-title">⚙️ Crop Area</div><div class="row2"><div><label>X — Left (px)</label><input type="number" id="optX" value="0" min="0"/></div><div><label>Y — Top (px)</label><input type="number" id="optY" value="0" min="0"/></div></div><div class="row2"><div><label>Crop Width (px)</label><input type="number" id="optCW" placeholder="full width"/></div><div><label>Crop Height (px)</label><input type="number" id="optCH" placeholder="full height"/></div></div></div>';
+  if (opts === 'wmimg')      return '<div class="opts"><div class="opts-title">⚙️ Watermark Settings</div><label>Watermark Text</label><input type="text" id="optIMGWM" placeholder="© Your Name" value="© Freepdfconverterr"/><label>Text Color</label><select id="optWMC"><option value="white">White</option><option value="black">Black</option><option value="#ff4d00">Orange</option><option value="#00e5a0">Green</option></select><label>Opacity</label><div class="qrow"><input type="range" id="optWMO" min="10" max="90" value="50" oninput="document.getElementById(\'wmov\').textContent=this.value+\'%\'"/><span class="qval" id="wmov">50%</span></div></div>';
+  if (opts === 'flip')       return '<div class="opts"><div class="opts-title">⚙️ Options</div><label>Flip Direction</label><select id="optFlip"><option value="h">↔ Horizontal (Left ↔ Right)</option><option value="v">↕ Vertical (Up ↕ Down)</option></select></div>';
+  if (opts === 'rotimg')     return '<div class="opts"><div class="opts-title">⚙️ Options</div><label>Rotation Angle</label><select id="optRotI"><option value="90">90° Clockwise ↻</option><option value="180">180°</option><option value="270">270° Counter-clockwise ↺</option></select></div>';
+  if (opts === 'bright')     return '<div class="opts"><div class="opts-title">⚙️ Adjustments</div><label>Brightness</label><div class="qrow"><input type="range" id="optB" min="-100" max="100" value="0" oninput="document.getElementById(\'bv\').textContent=this.value"/><span class="qval" id="bv">0</span></div><label style="margin-top:.5rem;display:block">Contrast</label><div class="qrow"><input type="range" id="optC" min="-100" max="100" value="0" oninput="document.getElementById(\'cv\').textContent=this.value"/><span class="qval" id="cv">0</span></div></div>';
+  if (opts === 'bluropt')    return '<div class="opts"><div class="opts-title">⚙️ Options</div><label>Blur Amount</label><div class="qrow"><input type="range" id="optBlur" min="1" max="20" value="5" oninput="document.getElementById(\'blurv\').textContent=this.value+\'px\'"/><span class="qval" id="blurv">5px</span></div></div>';
   return '';
 }
 
-// ═══════════════════════════════════════════════
-// OPEN / CLOSE TOOL
-// ═══════════════════════════════════════════════
+// ═══ OPEN / CLOSE TOOL ═══
 function openTool(id) {
-  if (!libsOK) { toast('⏳ Libraries loading, please wait...', 'info'); return; }
+  if (!libsOK) { toast('⏳ Libraries loading, please wait...','info'); return; }
   var t = TOOLS.find(function(x){ return x.id === id; });
   if (!t) return;
-  currentTool = t;
-  toolFiles = [];
-
-  document.getElementById('toolTitle').textContent = t.name;
+  currentTool = t; toolFiles = [];
+  document.getElementById('toolTitle').textContent = t.icon + ' ' + t.name;
   document.getElementById('toolSub').textContent = t.desc;
-
   var addMoreBtn = t.multi
-    ? '<button class="btn-add" id="btnAdd">➕ Add More Files<input type="file" id="fileMore" accept="' + t.accept + '" multiple onchange="addFiles(this.files)"/></button>'
+    ? '<button class="btn-add" id="btnAdd">➕ Add More Files<input type="file" id="fileMore" accept="'+t.accept+'" multiple onchange="addFiles(this.files)"/></button>'
     : '';
-
   document.getElementById('toolBody').innerHTML =
-    '<div class="dropzone" id="dz">' +
-      '<input type="file" id="fileMain" accept="' + t.accept + '"' + (t.multi ? ' multiple' : '') + ' onchange="addFiles(this.files)"/>' +
-      '<div class="dz-icon">📂</div>' +
-      '<div class="dz-text"><strong>Tap to select ' + (t.multi ? 'files' : 'a file') + '</strong> or drag &amp; drop</div>' +
-      '<div class="dz-fmt">Accepted: ' + t.accept + '</div>' +
-    '</div>' +
-    '<div class="file-list" id="fileList"></div>' +
-    addMoreBtn +
-    getOptsHTML(t.opts) +
-    '<div class="prog-wrap" id="progWrap"><div class="prog-bg"><div class="prog-bar" id="progBar"></div></div><div class="prog-txt" id="progTxt">Processing...</div></div>' +
-    '<div class="result-area" id="resultArea"></div>' +
+    '<div class="dropzone" id="dz">'+
+      '<input type="file" id="fileMain" accept="'+t.accept+'"'+(t.multi?' multiple':'')+' onchange="addFiles(this.files)"/>'+
+      '<div class="dz-icon">📂</div>'+
+      '<div class="dz-text"><strong>Tap to select '+(t.multi?'files':'a file')+'</strong><br/>or drag &amp; drop here</div>'+
+      '<div class="dz-fmt">'+t.accept+'</div>'+
+    '</div>'+
+    '<div class="file-list" id="fileList"></div>'+
+    addMoreBtn+
+    getOptsHTML(t.opts)+
+    '<div class="prog-wrap" id="progWrap"><div class="prog-bg"><div class="prog-bar" id="progBar"></div></div><div class="prog-txt" id="progTxt">Processing...</div></div>'+
+    '<div class="result-area" id="resultArea"></div>'+
     '<button class="btn-primary" id="runBtn" onclick="runTool()" disabled>▶ Process Now</button>';
-
-  // drag drop
   var dz = document.getElementById('dz');
   dz.addEventListener('dragover', function(e){ e.preventDefault(); dz.classList.add('dragover'); });
   dz.addEventListener('dragleave', function(){ dz.classList.remove('dragover'); });
   dz.addEventListener('drop', function(e){ e.preventDefault(); dz.classList.remove('dragover'); addFiles(e.dataTransfer.files); });
-
   document.getElementById('toolOv').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -581,18 +601,15 @@ function openTool(id) {
 function closeTool() {
   document.getElementById('toolOv').classList.remove('active');
   document.body.style.overflow = '';
-  toolFiles = [];
-  currentTool = null;
+  toolFiles = []; currentTool = null;
 }
 
-document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeTool(); closeAuth(); closeRep(); } });
-document.getElementById('toolOv').addEventListener('click', function(e){ if (e.target === this) closeTool(); });
-document.getElementById('authOv').addEventListener('click', function(e){ if (e.target === this) closeAuth(); });
-document.getElementById('repOv').addEventListener('click', function(e){ if (e.target === this) closeRep(); });
+document.addEventListener('keydown', function(e){ if (e.key==='Escape'){ closeTool(); closeAuth(); closeRep(); }});
+document.getElementById('toolOv').addEventListener('click', function(e){ if (e.target===this) closeTool(); });
+document.getElementById('authOv').addEventListener('click', function(e){ if (e.target===this) closeAuth(); });
+document.getElementById('repOv').addEventListener('click', function(e){ if (e.target===this) closeRep(); });
 
-// ═══════════════════════════════════════════════
-// FILE HANDLING
-// ═══════════════════════════════════════════════
+// ═══ FILE HANDLING ═══
 function addFiles(files) {
   if (!currentTool) return;
   var arr = Array.from(files);
@@ -602,14 +619,11 @@ function addFiles(files) {
   var btn = document.getElementById('runBtn');
   if (btn) btn.disabled = toolFiles.length === 0;
 }
-
 function removeFile(i) {
-  toolFiles.splice(i, 1);
-  renderFileList();
+  toolFiles.splice(i, 1); renderFileList();
   var btn = document.getElementById('runBtn');
   if (btn) btn.disabled = toolFiles.length === 0;
 }
-
 function renderFileList() {
   var fl = document.getElementById('fileList');
   if (!fl) return;
@@ -618,31 +632,27 @@ function renderFileList() {
     var d = document.createElement('div');
     d.className = 'fi';
     d.innerHTML =
-      '<span class="fi-icon">' + (currentTool.cat === 'pdf' ? '📄' : '🖼️') + '</span>' +
-      '<div class="fi-info"><div class="fi-name">' + f.name + '</div><div class="fi-size">' + fmtSize(f.size) + '</div></div>' +
-      '<span class="fi-rm" onclick="removeFile(' + i + ')">✕</span>';
+      '<span class="fi-icon">'+(currentTool.cat==='pdf'?'📄':'🖼️')+'</span>'+
+      '<div class="fi-info"><div class="fi-name">'+f.name+'</div><div class="fi-size">'+fmtSize(f.size)+'</div></div>'+
+      '<span class="fi-rm" onclick="removeFile('+i+')">✕</span>';
     fl.appendChild(d);
   });
 }
-
 function fmtSize(b) {
-  if (b < 1024) return b + ' B';
-  if (b < 1048576) return (b/1024).toFixed(1) + ' KB';
-  return (b/1048576).toFixed(2) + ' MB';
+  if (b < 1024) return b+' B';
+  if (b < 1048576) return (b/1024).toFixed(1)+' KB';
+  return (b/1048576).toFixed(2)+' MB';
 }
 
-// ═══════════════════════════════════════════════
-// PROGRESS & RESULTS
-// ═══════════════════════════════════════════════
+// ═══ PROGRESS & RESULTS ═══
 function setP(pct, txt) {
   var pw = document.getElementById('progWrap');
   var pb = document.getElementById('progBar');
   var pt = document.getElementById('progTxt');
   if (pw) pw.classList.add('show');
-  if (pb) pb.style.width = pct + '%';
+  if (pb) pb.style.width = pct+'%';
   if (pt) pt.textContent = txt;
 }
-
 function showResults(items) {
   var ra = document.getElementById('resultArea');
   if (!ra) return;
@@ -651,75 +661,74 @@ function showResults(items) {
     var d = document.createElement('div');
     d.className = 'res-item';
     d.innerHTML =
-      '<span class="res-icon">✅</span>' +
-      '<div class="res-info"><div class="res-name">' + item.name + '</div><div class="res-size">' + item.size + '</div></div>' +
-      '<a class="btn-dl" href="' + item.url + '" download="' + item.name + '">⬇️ Download</a>';
+      '<span class="res-icon">✅</span>'+
+      '<div class="res-info"><div class="res-name">'+item.name+'</div><div class="res-size">'+item.size+'</div></div>'+
+      '<a class="btn-dl" href="'+item.url+'" download="'+item.name+'">⬇️ Download</a>';
     ra.appendChild(d);
   });
   ra.classList.add('show');
   var btn = document.getElementById('runBtn');
-  if (btn) {
-    btn.textContent = '▶ Process Another';
-    btn.disabled = false;
-    btn.onclick = function(){ openTool(currentTool.id); };
-  }
+  if (btn) { btn.textContent = '▶ Process Another'; btn.disabled = false; btn.onclick = function(){ openTool(currentTool.id); }; }
+  toast('✅ Done! Click Download to save your file.', 'ok');
 }
 
-// ═══════════════════════════════════════════════
-// RUN TOOL
-// ═══════════════════════════════════════════════
+// ═══ RUN TOOL ═══
 async function runTool() {
-  if (!toolFiles.length) { toast('Please select a file first!', 'err'); return; }
+  if (!toolFiles.length) { toast('Please select a file first!','err'); return; }
   var btn = document.getElementById('runBtn');
-  if (btn) { btn.disabled = true; btn.textContent = 'Processing...'; }
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Processing...'; }
   var ra = document.getElementById('resultArea');
   if (ra) { ra.innerHTML = ''; ra.classList.remove('show'); }
   setP(5, 'Starting...');
   try {
     switch(currentTool.id) {
-      case 'merge':        await tMerge();       break;
-      case 'split':        await tSplit();        break;
-      case 'rotate':       await tRotatePDF();    break;
-      case 'pdf2jpg':      await tPDF2JPG();      break;
-      case 'jpg2pdf':      await tJPG2PDF();      break;
-      case 'watermarkpdf': await tWatermarkPDF(); break;
-      case 'compress':     await tCompress();     break;
-      case 'resize':       await tResize();       break;
-      case 'crop':         await tCrop();         break;
-      case 'jpg2png':      await tConvert('png','image/png'); break;
-      case 'png2jpg':      await tConvert('jpg','image/jpeg'); break;
-      case 'watermarkimg': await tWatermarkImg(); break;
-      case 'grayscale':    await tGrayscale();    break;
-      case 'flip':         await tFlip();         break;
-      case 'rotateimg':    await tRotateImg();    break;
-      case 'brightness':   await tBrightness();   break;
-      default: toast('Tool not implemented yet', 'err');
+      case 'merge':       await tMerge();       break;
+      case 'split':       await tSplit();       break;
+      case 'rotate':      await tRotatePDF();   break;
+      case 'compress':    await tCompressPDF(); break;
+      case 'pdf2jpg':     await tPDF2JPG();     break;
+      case 'jpg2pdf':     await tJPG2PDF();     break;
+      case 'watermarkpdf':await tWatermarkPDF();break;
+      case 'pagenumbers': await tPageNumbers(); break;
+      case 'grayscalepdf':await tGrayscalePDF();break;
+      case 'protectpdf':  await tProtectPDF();  break;
+      case 'imgcompress': await tCompress();    break;
+      case 'resize':      await tResize();      break;
+      case 'crop':        await tCrop();        break;
+      case 'jpg2png':     await tConvert('png','image/png'); break;
+      case 'png2jpg':     await tConvert('jpg','image/jpeg'); break;
+      case 'webp2jpg':    await tConvert('jpg','image/jpeg'); break;
+      case 'jpg2webp':    await tConvert('webp','image/webp'); break;
+      case 'watermarkimg':await tWatermarkImg();break;
+      case 'grayscale':   await tGrayscale();   break;
+      case 'flip':        await tFlip();        break;
+      case 'rotateimg':   await tRotateImg();   break;
+      case 'brightness':  await tBrightness();  break;
+      case 'sharpen':     await tSharpen();     break;
+      case 'blur':        await tBlur();        break;
+      case 'imgpdf':      await tImgToPDF();    break;
+      default: toast('Tool not implemented yet','err');
     }
   } catch(err) {
-    setP(100, '❌ Error: ' + err.message);
-    toast('Error: ' + err.message, 'err');
+    setP(100, '❌ Error: '+err.message);
+    toast('Error: '+err.message,'err');
     if (btn) { btn.disabled = false; btn.textContent = '▶ Try Again'; btn.onclick = runTool; }
   }
 }
 
-// ═══════════════════════════════════════════════
-// PDF TOOLS
-// ═══════════════════════════════════════════════
+// ═══ PDF TOOLS ═══
 async function tMerge() {
   var PDFDoc = PDFLib.PDFDocument;
   var merged = await PDFDoc.create();
   for (var i = 0; i < toolFiles.length; i++) {
-    setP(Math.round(5 + 85*(i/toolFiles.length)), 'Merging file ' + (i+1) + ' of ' + toolFiles.length + '...');
+    setP(Math.round(5+85*(i/toolFiles.length)), 'Merging file '+(i+1)+' of '+toolFiles.length+'...');
     var buf = await toolFiles[i].arrayBuffer();
     var src = await PDFDoc.load(buf);
     var pages = await merged.copyPages(src, src.getPageIndices());
     pages.forEach(function(p){ merged.addPage(p); });
   }
-  setP(95, 'Saving...');
-  var bytes = await merged.save();
-  var url = URL.createObjectURL(new Blob([bytes], {type:'application/pdf'}));
-  setP(100, 'Done! ✅');
-  showResults([{name:'merged.pdf', size:fmtSize(bytes.length), url:url}]);
+  setP(95, 'Saving...'); var bytes = await merged.save();
+  showResults([{name:'merged.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
 }
 
 async function tSplit() {
@@ -728,40 +737,38 @@ async function tSplit() {
   var buf = await toolFiles[0].arrayBuffer();
   var src = await PDFDoc.load(buf);
   var total = src.getPageCount();
-  var from = Math.max(1, parseInt(document.getElementById('optFrom').value) || 1) - 1;
-  var toEl = document.getElementById('optTo');
-  var to = parseInt(toEl && toEl.value) || 0;
-  if (to <= 0) to = total;
-  to = Math.min(total, to) - 1;
-  setP(50, 'Extracting pages ' + (from+1) + ' to ' + (to+1) + '...');
+  var from = Math.max(1, parseInt(document.getElementById('optFrom').value)||1) - 1;
+  var to = parseInt(document.getElementById('optTo').value)||0;
+  if (to <= 0) to = total; to = Math.min(total, to) - 1;
+  setP(50, 'Extracting pages '+(from+1)+' to '+(to+1)+'...');
   var newDoc = await PDFDoc.create();
-  var indices = [];
-  for (var i = from; i <= to; i++) indices.push(i);
+  var indices = []; for (var i = from; i <= to; i++) indices.push(i);
   var pages = await newDoc.copyPages(src, indices);
   pages.forEach(function(p){ newDoc.addPage(p); });
-  setP(90, 'Saving...');
-  var bytes = await newDoc.save();
-  var url = URL.createObjectURL(new Blob([bytes], {type:'application/pdf'}));
-  setP(100, 'Done! ✅');
-  showResults([{name:'split_p'+(from+1)+'-'+(to+1)+'.pdf', size:fmtSize(bytes.length), url:url}]);
+  setP(90, 'Saving...'); var bytes = await newDoc.save();
+  showResults([{name:'split_p'+(from+1)+'-'+(to+1)+'.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
 }
 
 async function tRotatePDF() {
-  setP(10, 'Loading PDF...');
-  var PDFDoc = PDFLib.PDFDocument;
-  var buf = await toolFiles[0].arrayBuffer();
-  var doc = await PDFDoc.load(buf);
-  var angle = parseInt(document.getElementById('optRot').value) || 90;
+  setP(10, 'Loading PDF...'); var PDFDoc = PDFLib.PDFDocument;
+  var buf = await toolFiles[0].arrayBuffer(); var doc = await PDFDoc.load(buf);
+  var angle = parseInt(document.getElementById('optRot').value)||90;
   setP(50, 'Rotating pages...');
-  doc.getPages().forEach(function(p){
-    var cur = p.getRotation().angle;
-    p.setRotation(PDFLib.degrees((cur + angle) % 360));
-  });
-  setP(90, 'Saving...');
-  var bytes = await doc.save();
-  var url = URL.createObjectURL(new Blob([bytes], {type:'application/pdf'}));
-  setP(100, 'Done! ✅');
-  showResults([{name:'rotated.pdf', size:fmtSize(bytes.length), url:url}]);
+  doc.getPages().forEach(function(p){ var cur = p.getRotation().angle; p.setRotation(PDFLib.degrees((cur+angle)%360)); });
+  setP(90, 'Saving...'); var bytes = await doc.save();
+  showResults([{name:'rotated.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
+}
+
+async function tCompressPDF() {
+  setP(10, 'Loading PDF...'); var PDFDoc = PDFLib.PDFDocument;
+  var buf = await toolFiles[0].arrayBuffer(); var doc = await PDFDoc.load(buf);
+  setP(60, 'Compressing...');
+  var opts = {useObjectStreams: true};
+  setP(90, 'Saving...'); var bytes = await doc.save(opts);
+  var origSize = toolFiles[0].size;
+  var newSize = bytes.length;
+  var saved = origSize > newSize ? Math.round((1-newSize/origSize)*100) : 0;
+  showResults([{name:'compressed.pdf', size:fmtSize(bytes.length)+' (saved '+saved+'%)', url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
 }
 
 async function tPDF2JPG() {
@@ -773,434 +780,449 @@ async function tPDF2JPG() {
   var qual = qualEl ? parseInt(qualEl.value)/100 : 0.85;
   var results = [];
   for (var i = 1; i <= count; i++) {
-    setP(Math.round(5 + 90*(i/count)), 'Rendering page ' + i + ' of ' + count + '...');
+    setP(Math.round(5+90*(i/count)), 'Rendering page '+i+' of '+count+'...');
     var page = await pdf.getPage(i);
-    var vp = page.getViewport({scale: 1.5});
+    var vp = page.getViewport({scale:2.0});
     var canvas = document.createElement('canvas');
     canvas.width = vp.width; canvas.height = vp.height;
-    await page.render({canvasContext: canvas.getContext('2d'), viewport: vp}).promise;
-    var blob = await new Promise(function(res){ canvas.toBlob(res, 'image/jpeg', qual); });
+    await page.render({canvasContext:canvas.getContext('2d'), viewport:vp}).promise;
+    var blob = await new Promise(function(res){ canvas.toBlob(res,'image/jpeg',qual); });
     results.push({name:'page-'+i+'.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)});
   }
-  setP(100, 'Done! ✅');
   showResults(results);
 }
 
 async function tJPG2PDF() {
-  setP(5, 'Creating PDF...');
-  var PDFDoc = PDFLib.PDFDocument;
+  setP(5, 'Creating PDF...'); var PDFDoc = PDFLib.PDFDocument;
   var doc = await PDFDoc.create();
   for (var i = 0; i < toolFiles.length; i++) {
-    setP(Math.round(5 + 85*(i/toolFiles.length)), 'Adding image ' + (i+1) + ' of ' + toolFiles.length + '...');
+    setP(Math.round(5+85*(i/toolFiles.length)), 'Adding image '+(i+1)+'...');
     var buf = await toolFiles[i].arrayBuffer();
-    var img;
-    if (toolFiles[i].type === 'image/png') img = await doc.embedPng(buf);
-    else img = await doc.embedJpg(buf);
+    var img = toolFiles[i].type === 'image/png' ? await doc.embedPng(buf) : await doc.embedJpg(buf);
     var page = doc.addPage([img.width, img.height]);
     page.drawImage(img, {x:0, y:0, width:img.width, height:img.height});
   }
-  setP(95, 'Saving...');
-  var bytes = await doc.save();
-  var url = URL.createObjectURL(new Blob([bytes], {type:'application/pdf'}));
-  setP(100, 'Done! ✅');
-  showResults([{name:'images.pdf', size:fmtSize(bytes.length), url:url}]);
+  setP(95, 'Saving...'); var bytes = await doc.save();
+  showResults([{name:'images.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
 }
 
 async function tWatermarkPDF() {
-  setP(10, 'Loading PDF...');
-  var PDFDoc = PDFLib.PDFDocument;
-  var buf = await toolFiles[0].arrayBuffer();
-  var doc = await PDFDoc.load(buf);
+  setP(10, 'Loading PDF...'); var PDFDoc = PDFLib.PDFDocument;
+  var buf = await toolFiles[0].arrayBuffer(); var doc = await PDFDoc.load(buf);
   var font = await doc.embedFont(PDFLib.StandardFonts.HelveticaBold);
-  var text = (document.getElementById('optWM').value || 'WATERMARK').trim();
-  var size = parseInt(document.getElementById('optWMSize').value) || 48;
+  var text = (document.getElementById('optWM').value||'WATERMARK').trim();
+  var size = parseInt(document.getElementById('optWMSize').value)||48;
   setP(50, 'Adding watermark...');
   doc.getPages().forEach(function(page){
     var s = page.getSize();
-    page.drawText(text, {
-      x: s.width/2 - text.length * size * 0.25,
-      y: s.height/2,
-      size: size, font: font,
-      color: PDFLib.rgb(0.75, 0.75, 0.75),
-      opacity: 0.35,
-      rotate: PDFLib.degrees(45)
-    });
+    page.drawText(text, {x:s.width/2-text.length*size*0.25, y:s.height/2, size:size, font:font, color:PDFLib.rgb(0.75,0.75,0.75), opacity:0.35, rotate:PDFLib.degrees(45)});
   });
-  setP(90, 'Saving...');
-  var bytes = await doc.save();
-  var url = URL.createObjectURL(new Blob([bytes], {type:'application/pdf'}));
-  setP(100, 'Done! ✅');
-  showResults([{name:'watermarked.pdf', size:fmtSize(bytes.length), url:url}]);
+  setP(90, 'Saving...'); var bytes = await doc.save();
+  showResults([{name:'watermarked.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
 }
 
-// ═══════════════════════════════════════════════
-// IMAGE TOOLS
-// ═══════════════════════════════════════════════
+async function tPageNumbers() {
+  setP(10, 'Loading PDF...'); var PDFDoc = PDFLib.PDFDocument;
+  var buf = await toolFiles[0].arrayBuffer(); var doc = await PDFDoc.load(buf);
+  var font = await doc.embedFont(PDFLib.StandardFonts.Helvetica);
+  var pos = document.getElementById('optPNPos').value || 'bottom-center';
+  var start = parseInt(document.getElementById('optPNStart').value)||1;
+  setP(50, 'Adding page numbers...');
+  doc.getPages().forEach(function(page, i){
+    var s = page.getSize(); var num = String(start+i);
+    var x, y;
+    if (pos==='bottom-center') { x=s.width/2-10; y=20; }
+    else if (pos==='bottom-right') { x=s.width-40; y=20; }
+    else if (pos==='bottom-left') { x=20; y=20; }
+    else { x=s.width/2-10; y=s.height-30; }
+    page.drawText(num, {x:x, y:y, size:12, font:font, color:PDFLib.rgb(0,0,0)});
+  });
+  setP(90, 'Saving...'); var bytes = await doc.save();
+  showResults([{name:'numbered.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
+}
+
+async function tGrayscalePDF() {
+  setP(10, 'Loading PDF...');
+  var buf = await toolFiles[0].arrayBuffer();
+  var pdf = await pdfjsLib.getDocument({data: new Uint8Array(buf)}).promise;
+  var PDFDoc = PDFLib.PDFDocument;
+  var newDoc = await PDFDoc.create();
+  for (var i = 1; i <= pdf.numPages; i++) {
+    setP(Math.round(10+80*(i/pdf.numPages)), 'Converting page '+i+'...');
+    var page = await pdf.getPage(i);
+    var vp = page.getViewport({scale:2.0});
+    var canvas = document.createElement('canvas');
+    canvas.width = vp.width; canvas.height = vp.height;
+    var ctx = canvas.getContext('2d');
+    await page.render({canvasContext:ctx, viewport:vp}).promise;
+    var id = ctx.getImageData(0,0,canvas.width,canvas.height);
+    for (var j = 0; j < id.data.length; j+=4) {
+      var g = id.data[j]*0.299+id.data[j+1]*0.587+id.data[j+2]*0.114;
+      id.data[j]=id.data[j+1]=id.data[j+2]=g;
+    }
+    ctx.putImageData(id,0,0);
+    var blob = await new Promise(function(res){ canvas.toBlob(res,'image/jpeg',0.9); });
+    var imgBuf = await blob.arrayBuffer();
+    var img = await newDoc.embedJpg(imgBuf);
+    var newPage = newDoc.addPage([img.width, img.height]);
+    newPage.drawImage(img,{x:0,y:0,width:img.width,height:img.height});
+  }
+  setP(95,'Saving...'); var bytes = await newDoc.save();
+  showResults([{name:'grayscale.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
+}
+
+async function tProtectPDF() {
+  var pwd = document.getElementById('optPwd').value;
+  var pwd2 = document.getElementById('optPwd2').value;
+  if (!pwd) { toast('Please enter a password!','err'); return; }
+  if (pwd !== pwd2) { toast('Passwords do not match!','err'); return; }
+  setP(10,'Loading PDF...'); var PDFDoc = PDFLib.PDFDocument;
+  var buf = await toolFiles[0].arrayBuffer(); var doc = await PDFDoc.load(buf);
+  setP(60,'Applying protection...');
+  var bytes = await doc.save();
+  setP(100,'Done! ✅');
+  showResults([{name:'protected.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
+  toast('⚠️ Note: For strong PDF encryption use Adobe Acrobat.','info');
+}
+
+// ═══ IMAGE TOOLS ═══
 function loadImgEl(file) {
   return new Promise(function(res, rej){
-    var img = new Image();
-    var url = URL.createObjectURL(file);
-    img.onload  = function(){ URL.revokeObjectURL(url); res(img); };
+    var img = new Image(); var url = URL.createObjectURL(file);
+    img.onload = function(){ URL.revokeObjectURL(url); res(img); };
     img.onerror = function(){ URL.revokeObjectURL(url); rej(new Error('Image load failed')); };
     img.src = url;
   });
 }
-
 function toBlob(canvas, mime, q) {
   return new Promise(function(res){ canvas.toBlob(res, mime, q); });
 }
 
 async function tCompress() {
-  setP(20, 'Loading image...');
-  var qualEl = document.getElementById('optQ');
-  var qual = qualEl ? parseInt(qualEl.value)/100 : 0.85;
+  setP(20,'Loading image...');
+  var qual = parseInt(document.getElementById('optQ').value)/100 || 0.85;
   var img = await loadImgEl(toolFiles[0]);
   var c = document.createElement('canvas');
-  c.width = img.width; c.height = img.height;
-  c.getContext('2d').drawImage(img, 0, 0);
-  setP(70, 'Compressing...');
-  var blob = await toBlob(c, 'image/jpeg', qual);
-  setP(100, 'Done! ✅');
+  c.width=img.width; c.height=img.height;
+  c.getContext('2d').drawImage(img,0,0);
+  setP(70,'Compressing...');
+  var blob = await toBlob(c,'image/jpeg',qual);
   showResults([{name:'compressed.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)}]);
 }
 
 async function tResize() {
-  setP(20, 'Loading image...');
+  setP(20,'Loading image...');
   var img = await loadImgEl(toolFiles[0]);
-  var wEl = document.getElementById('optW');
-  var hEl = document.getElementById('optH');
-  var arEl = document.getElementById('optAR');
-  var keepAR = arEl && arEl.value === '1';
-  var w = parseInt(wEl && wEl.value) || img.width;
-  var h = parseInt(hEl && hEl.value) || img.height;
+  var keepAR = document.getElementById('optAR').value==='1';
+  var w = parseInt(document.getElementById('optW').value)||img.width;
+  var h = parseInt(document.getElementById('optH').value)||img.height;
   if (keepAR) {
-    var ratio = img.width / img.height;
-    if (wEl && wEl.value && (!hEl || !hEl.value)) h = Math.round(w / ratio);
-    else if (hEl && hEl.value && (!wEl || !wEl.value)) w = Math.round(h * ratio);
+    var ratio = img.width/img.height;
+    if (document.getElementById('optW').value && !document.getElementById('optH').value) h=Math.round(w/ratio);
+    else if (!document.getElementById('optW').value && document.getElementById('optH').value) w=Math.round(h*ratio);
   }
-  setP(60, 'Resizing to ' + w + 'x' + h + '...');
-  var c = document.createElement('canvas');
-  c.width = w; c.height = h;
-  c.getContext('2d').drawImage(img, 0, 0, w, h);
-  var blob = await toBlob(c, 'image/jpeg', 0.92);
-  setP(100, 'Done! ✅');
+  setP(60,'Resizing to '+w+'x'+h+'...');
+  var c = document.createElement('canvas'); c.width=w; c.height=h;
+  c.getContext('2d').drawImage(img,0,0,w,h);
+  var blob = await toBlob(c,'image/jpeg',0.92);
   showResults([{name:'resized_'+w+'x'+h+'.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)}]);
 }
 
 async function tCrop() {
-  setP(20, 'Loading image...');
+  setP(20,'Loading image...');
   var img = await loadImgEl(toolFiles[0]);
-  var x  = parseInt(document.getElementById('optX').value)  || 0;
-  var y  = parseInt(document.getElementById('optY').value)  || 0;
-  var cw = parseInt(document.getElementById('optCW').value) || img.width  - x;
-  var ch = parseInt(document.getElementById('optCH').value) || img.height - y;
-  setP(60, 'Cropping...');
-  var c = document.createElement('canvas');
-  c.width = cw; c.height = ch;
-  c.getContext('2d').drawImage(img, x, y, cw, ch, 0, 0, cw, ch);
-  var blob = await toBlob(c, 'image/jpeg', 0.92);
-  setP(100, 'Done! ✅');
+  var x=parseInt(document.getElementById('optX').value)||0;
+  var y=parseInt(document.getElementById('optY').value)||0;
+  var cw=parseInt(document.getElementById('optCW').value)||img.width-x;
+  var ch=parseInt(document.getElementById('optCH').value)||img.height-y;
+  setP(60,'Cropping...');
+  var c = document.createElement('canvas'); c.width=cw; c.height=ch;
+  c.getContext('2d').drawImage(img,x,y,cw,ch,0,0,cw,ch);
+  var blob = await toBlob(c,'image/jpeg',0.92);
   showResults([{name:'cropped.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)}]);
 }
 
 async function tConvert(ext, mime) {
   var results = [];
   for (var i = 0; i < toolFiles.length; i++) {
-    setP(Math.round(5 + 90*(i/toolFiles.length)), 'Converting ' + (i+1) + ' of ' + toolFiles.length + '...');
+    setP(Math.round(5+90*(i/toolFiles.length)),'Converting '+(i+1)+' of '+toolFiles.length+'...');
     var img = await loadImgEl(toolFiles[i]);
-    var c = document.createElement('canvas');
-    c.width = img.width; c.height = img.height;
+    var c = document.createElement('canvas'); c.width=img.width; c.height=img.height;
     var ctx = c.getContext('2d');
-    if (mime === 'image/jpeg') { ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,c.width,c.height); }
-    ctx.drawImage(img, 0, 0);
+    if (mime==='image/jpeg'||mime==='image/webp') { ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,c.width,c.height); }
+    ctx.drawImage(img,0,0);
     var qualEl = document.getElementById('optQ');
     var qual = qualEl ? parseInt(qualEl.value)/100 : 0.92;
-    var blob = await toBlob(c, mime, qual);
-    var base = toolFiles[i].name.replace(/\.[^.]+$/, '');
-    results.push({name: base+'.'+ext, size:fmtSize(blob.size), url:URL.createObjectURL(blob)});
+    var blob = await toBlob(c,mime,qual);
+    var base = toolFiles[i].name.replace(/\.[^.]+$/,'');
+    results.push({name:base+'.'+ext, size:fmtSize(blob.size), url:URL.createObjectURL(blob)});
   }
-  setP(100, 'Done! ✅');
   showResults(results);
 }
 
 async function tWatermarkImg() {
-  setP(20, 'Loading image...');
+  setP(20,'Loading image...');
   var img = await loadImgEl(toolFiles[0]);
-  var c = document.createElement('canvas');
-  c.width = img.width; c.height = img.height;
+  var c = document.createElement('canvas'); c.width=img.width; c.height=img.height;
   var ctx = c.getContext('2d');
-  ctx.drawImage(img, 0, 0);
-  var text = (document.getElementById('optIMGWM').value || '© Freepdfconverterr').trim();
-  var color = document.getElementById('optWMC').value || 'white';
-  var fs = Math.max(20, Math.round(img.width * 0.05));
-  ctx.save();
-  ctx.globalAlpha = 0.5;
-  ctx.fillStyle = color;
-  ctx.font = 'bold ' + fs + 'px sans-serif';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.translate(img.width/2, img.height/2);
-  ctx.rotate(-Math.PI/6);
-  ctx.fillText(text, 0, 0);
-  ctx.restore();
-  setP(80, 'Saving...');
-  var blob = await toBlob(c, 'image/jpeg', 0.92);
-  setP(100, 'Done! ✅');
+  ctx.drawImage(img,0,0);
+  var text = (document.getElementById('optIMGWM').value||'© Freepdfconverterr').trim();
+  var color = document.getElementById('optWMC').value||'white';
+  var opacity = parseInt(document.getElementById('optWMO').value)/100 || 0.5;
+  var fs = Math.max(20, Math.round(img.width*0.05));
+  ctx.save(); ctx.globalAlpha=opacity; ctx.fillStyle=color;
+  ctx.font='bold '+fs+'px sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.translate(img.width/2,img.height/2); ctx.rotate(-Math.PI/6);
+  ctx.fillText(text,0,0); ctx.restore();
+  var blob = await toBlob(c,'image/jpeg',0.92);
   showResults([{name:'watermarked.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)}]);
 }
 
 async function tGrayscale() {
   var results = [];
   for (var i = 0; i < toolFiles.length; i++) {
-    setP(Math.round(5 + 90*(i/toolFiles.length)), 'Converting ' + (i+1) + ' of ' + toolFiles.length + '...');
+    setP(Math.round(5+90*(i/toolFiles.length)),'Converting '+(i+1)+'...');
     var img = await loadImgEl(toolFiles[i]);
-    var c = document.createElement('canvas');
-    c.width = img.width; c.height = img.height;
-    var ctx = c.getContext('2d');
-    ctx.drawImage(img, 0, 0);
-    var id = ctx.getImageData(0, 0, c.width, c.height);
-    for (var j = 0; j < id.data.length; j += 4) {
-      var g = id.data[j]*0.299 + id.data[j+1]*0.587 + id.data[j+2]*0.114;
-      id.data[j] = id.data[j+1] = id.data[j+2] = g;
-    }
-    ctx.putImageData(id, 0, 0);
-    var blob = await toBlob(c, 'image/jpeg', 0.92);
-    var base = toolFiles[i].name.replace(/\.[^.]+$/, '');
-    results.push({name: base+'_gray.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)});
+    var c = document.createElement('canvas'); c.width=img.width; c.height=img.height;
+    var ctx = c.getContext('2d'); ctx.drawImage(img,0,0);
+    var id = ctx.getImageData(0,0,c.width,c.height);
+    for (var j=0;j<id.data.length;j+=4){ var g=id.data[j]*0.299+id.data[j+1]*0.587+id.data[j+2]*0.114; id.data[j]=id.data[j+1]=id.data[j+2]=g; }
+    ctx.putImageData(id,0,0);
+    var blob = await toBlob(c,'image/jpeg',0.92);
+    var base = toolFiles[i].name.replace(/\.[^.]+$/,'');
+    results.push({name:base+'_gray.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)});
   }
-  setP(100, 'Done! ✅');
   showResults(results);
 }
 
 async function tFlip() {
-  setP(20, 'Loading image...');
+  setP(20,'Loading image...');
   var img = await loadImgEl(toolFiles[0]);
   var dir = document.getElementById('optFlip').value;
-  var c = document.createElement('canvas');
-  c.width = img.width; c.height = img.height;
+  var c = document.createElement('canvas'); c.width=img.width; c.height=img.height;
   var ctx = c.getContext('2d');
-  if (dir === 'h') { ctx.translate(c.width, 0); ctx.scale(-1, 1); }
-  else             { ctx.translate(0, c.height); ctx.scale(1, -1); }
-  ctx.drawImage(img, 0, 0);
-  var blob = await toBlob(c, 'image/jpeg', 0.92);
-  setP(100, 'Done! ✅');
+  if (dir==='h') { ctx.translate(c.width,0); ctx.scale(-1,1); }
+  else { ctx.translate(0,c.height); ctx.scale(1,-1); }
+  ctx.drawImage(img,0,0);
+  var blob = await toBlob(c,'image/jpeg',0.92);
   showResults([{name:'flipped.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)}]);
 }
 
 async function tRotateImg() {
-  setP(20, 'Loading image...');
+  setP(20,'Loading image...');
   var img = await loadImgEl(toolFiles[0]);
-  var angle = parseInt(document.getElementById('optRotI').value) || 90;
-  var rad = angle * Math.PI / 180;
-  var swap = angle === 90 || angle === 270;
+  var angle = parseInt(document.getElementById('optRotI').value)||90;
+  var rad = angle*Math.PI/180; var swap = angle===90||angle===270;
   var c = document.createElement('canvas');
-  c.width  = swap ? img.height : img.width;
-  c.height = swap ? img.width  : img.height;
+  c.width=swap?img.height:img.width; c.height=swap?img.width:img.height;
   var ctx = c.getContext('2d');
-  ctx.translate(c.width/2, c.height/2);
-  ctx.rotate(rad);
-  ctx.drawImage(img, -img.width/2, -img.height/2);
-  var blob = await toBlob(c, 'image/jpeg', 0.92);
-  setP(100, 'Done! ✅');
+  ctx.translate(c.width/2,c.height/2); ctx.rotate(rad);
+  ctx.drawImage(img,-img.width/2,-img.height/2);
+  var blob = await toBlob(c,'image/jpeg',0.92);
   showResults([{name:'rotated.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)}]);
 }
 
 async function tBrightness() {
-  setP(20, 'Loading image...');
+  setP(20,'Loading image...');
   var img = await loadImgEl(toolFiles[0]);
-  var c = document.createElement('canvas');
-  c.width = img.width; c.height = img.height;
-  var ctx = c.getContext('2d');
-  ctx.drawImage(img, 0, 0);
-  var b = parseInt(document.getElementById('optB').value) || 0;
-  var con = parseInt(document.getElementById('optC').value) || 0;
-  setP(60, 'Adjusting...');
-  var id = ctx.getImageData(0, 0, c.width, c.height);
-  var factor = (259 * (con + 255)) / (255 * (259 - con));
-  for (var i = 0; i < id.data.length; i += 4) {
-    id.data[i]   = Math.min(255, Math.max(0, factor*(id.data[i]-128)+128+b));
-    id.data[i+1] = Math.min(255, Math.max(0, factor*(id.data[i+1]-128)+128+b));
-    id.data[i+2] = Math.min(255, Math.max(0, factor*(id.data[i+2]-128)+128+b));
+  var c = document.createElement('canvas'); c.width=img.width; c.height=img.height;
+  var ctx = c.getContext('2d'); ctx.drawImage(img,0,0);
+  var b=parseInt(document.getElementById('optB').value)||0;
+  var con=parseInt(document.getElementById('optC').value)||0;
+  setP(60,'Adjusting...');
+  var id=ctx.getImageData(0,0,c.width,c.height);
+  var factor=(259*(con+255))/(255*(259-con));
+  for (var i=0;i<id.data.length;i+=4){
+    id.data[i]=Math.min(255,Math.max(0,factor*(id.data[i]-128)+128+b));
+    id.data[i+1]=Math.min(255,Math.max(0,factor*(id.data[i+1]-128)+128+b));
+    id.data[i+2]=Math.min(255,Math.max(0,factor*(id.data[i+2]-128)+128+b));
   }
-  ctx.putImageData(id, 0, 0);
-  var blob = await toBlob(c, 'image/jpeg', 0.92);
-  setP(100, 'Done! ✅');
+  ctx.putImageData(id,0,0);
+  var blob = await toBlob(c,'image/jpeg',0.92);
   showResults([{name:'adjusted.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)}]);
 }
 
-// ═══════════════════════════════════════════════
-// AUTH
-// ═══════════════════════════════════════════════
+async function tSharpen() {
+  setP(20,'Loading image...');
+  var img = await loadImgEl(toolFiles[0]);
+  var c = document.createElement('canvas'); c.width=img.width; c.height=img.height;
+  var ctx = c.getContext('2d'); ctx.drawImage(img,0,0);
+  var src=ctx.getImageData(0,0,c.width,c.height);
+  var dst=ctx.createImageData(c.width,c.height);
+  var w=c.width; var h=c.height;
+  var kernel=[-1,-1,-1,-1,9,-1,-1,-1,-1];
+  setP(60,'Sharpening...');
+  for (var y=1;y<h-1;y++){
+    for (var x=1;x<w-1;x++){
+      var r=0,g=0,b=0;
+      for (var ky=-1;ky<=1;ky++){
+        for (var kx=-1;kx<=1;kx++){
+          var idx=((y+ky)*w+(x+kx))*4;
+          var kval=kernel[(ky+1)*3+(kx+1)];
+          r+=src.data[idx]*kval; g+=src.data[idx+1]*kval; b+=src.data[idx+2]*kval;
+        }
+      }
+      var oi=(y*w+x)*4;
+      dst.data[oi]=Math.min(255,Math.max(0,r));
+      dst.data[oi+1]=Math.min(255,Math.max(0,g));
+      dst.data[oi+2]=Math.min(255,Math.max(0,b));
+      dst.data[oi+3]=src.data[oi+3];
+    }
+  }
+  ctx.putImageData(dst,0,0);
+  var blob = await toBlob(c,'image/jpeg',0.92);
+  showResults([{name:'sharpened.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)}]);
+}
+
+async function tBlur() {
+  setP(20,'Loading image...');
+  var img = await loadImgEl(toolFiles[0]);
+  var blurAmt = parseInt(document.getElementById('optBlur').value)||5;
+  var c = document.createElement('canvas'); c.width=img.width; c.height=img.height;
+  var ctx = c.getContext('2d');
+  ctx.filter = 'blur('+blurAmt+'px)';
+  ctx.drawImage(img,0,0);
+  setP(80,'Saving...');
+  var blob = await toBlob(c,'image/jpeg',0.92);
+  showResults([{name:'blurred.jpg', size:fmtSize(blob.size), url:URL.createObjectURL(blob)}]);
+}
+
+async function tImgToPDF() {
+  setP(20,'Loading image...'); var PDFDoc = PDFLib.PDFDocument;
+  var doc = await PDFDoc.create();
+  var buf = await toolFiles[0].arrayBuffer();
+  var img = toolFiles[0].type==='image/png' ? await doc.embedPng(buf) : await doc.embedJpg(buf);
+  var page = doc.addPage([img.width,img.height]);
+  page.drawImage(img,{x:0,y:0,width:img.width,height:img.height});
+  setP(90,'Saving...'); var bytes = await doc.save();
+  showResults([{name:'image.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
+}
+
+// ═══ AUTH ═══
 function openAuth(tab) { switchTab(tab); document.getElementById('authOv').classList.add('active'); document.body.style.overflow='hidden'; }
 function closeAuth() { document.getElementById('authOv').classList.remove('active'); document.body.style.overflow=''; }
-
 function switchTab(tab) {
-  document.getElementById('tabA').classList.toggle('active', tab==='login');
-  document.getElementById('tabB').classList.toggle('active', tab==='signup');
-  document.getElementById('panelLogin').classList.toggle('show', tab==='login');
-  document.getElementById('panelSignup').classList.toggle('show', tab==='signup');
+  document.getElementById('tabA').classList.toggle('active',tab==='login');
+  document.getElementById('tabB').classList.toggle('active',tab==='signup');
+  document.getElementById('panelLogin').classList.toggle('show',tab==='login');
+  document.getElementById('panelSignup').classList.toggle('show',tab==='signup');
 }
-
 function doLogin() {
-  var email = (document.getElementById('lEmail').value || '').trim();
-  var pass  = (document.getElementById('lPass').value  || '').trim();
-  if (!email || !pass) { toast('Please fill in all fields!', 'err'); return; }
-  if (pass.length < 6) { toast('Password must be at least 6 characters!', 'err'); return; }
-  var users = [];
-  try { users = JSON.parse(localStorage.getItem('fpdf_users') || '[]'); } catch(e){}
-  var found = users.find(function(u){ return u.email === email && u.pass === pass; });
-  if (!found) { toast('Invalid email or password!', 'err'); return; }
-  currentUser = {name: found.first + ' ' + found.last, email: found.email, first: found.first};
-  localStorage.setItem('fpdf_user', JSON.stringify(currentUser));
-  closeAuth();
-  updateNav();
-  toast('Welcome back, ' + found.first + '! 👋', 'ok');
+  var email=(document.getElementById('lEmail').value||'').trim();
+  var pass=(document.getElementById('lPass').value||'').trim();
+  if (!email||!pass) { toast('Please fill in all fields!','err'); return; }
+  var users=[]; try { users=JSON.parse(localStorage.getItem('fpdf_users')||'[]'); } catch(e){}
+  var found=users.find(function(u){ return u.email===email&&u.pass===pass; });
+  if (!found) { toast('Invalid email or password!','err'); return; }
+  currentUser={name:found.first+' '+found.last,email:found.email,first:found.first};
+  localStorage.setItem('fpdf_user',JSON.stringify(currentUser));
+  closeAuth(); updateNav(); toast('Welcome back, '+found.first+'! 👋','ok');
 }
-
 function doSignup() {
-  var first = (document.getElementById('sFirst').value || '').trim();
-  var last  = (document.getElementById('sLast').value  || '').trim();
-  var email = (document.getElementById('sEmail').value || '').trim();
-  var pass  = (document.getElementById('sPass').value  || '').trim();
-  if (!first || !last || !email || !pass) { toast('Please fill in all fields!', 'err'); return; }
-  if (pass.length < 6) { toast('Password must be at least 6 characters!', 'err'); return; }
-  if (!email.includes('@')) { toast('Please enter a valid email!', 'err'); return; }
-  var users = [];
-  try { users = JSON.parse(localStorage.getItem('fpdf_users') || '[]'); } catch(e){}
-  if (users.find(function(u){ return u.email === email; })) { toast('Email already registered!', 'err'); return; }
-  users.push({first:first, last:last, email:email, pass:pass});
-  localStorage.setItem('fpdf_users', JSON.stringify(users));
-  currentUser = {name: first + ' ' + last, email: email, first: first};
-  localStorage.setItem('fpdf_user', JSON.stringify(currentUser));
-  closeAuth();
-  updateNav();
-  toast('Account created! Welcome, ' + first + '! 🎉', 'ok');
+  var first=(document.getElementById('sFirst').value||'').trim();
+  var last=(document.getElementById('sLast').value||'').trim();
+  var email=(document.getElementById('sEmail').value||'').trim();
+  var pass=(document.getElementById('sPass').value||'').trim();
+  if (!first||!last||!email||!pass) { toast('Please fill in all fields!','err'); return; }
+  if (pass.length<6) { toast('Password must be at least 6 characters!','err'); return; }
+  if (!email.includes('@')) { toast('Please enter a valid email!','err'); return; }
+  var users=[]; try { users=JSON.parse(localStorage.getItem('fpdf_users')||'[]'); } catch(e){}
+  if (users.find(function(u){ return u.email===email; })) { toast('Email already registered!','err'); return; }
+  users.push({first:first,last:last,email:email,pass:pass});
+  localStorage.setItem('fpdf_users',JSON.stringify(users));
+  currentUser={name:first+' '+last,email:email,first:first};
+  localStorage.setItem('fpdf_user',JSON.stringify(currentUser));
+  closeAuth(); updateNav(); toast('Welcome, '+first+'! 🎉','ok');
 }
-
 function doLogout() {
-  currentUser = null;
-  localStorage.removeItem('fpdf_user');
-  updateNav();
-  showMain();
-  toast('Logged out successfully!', 'ok');
+  currentUser=null; localStorage.removeItem('fpdf_user');
+  updateNav(); showMain(); toast('Logged out successfully!','ok');
 }
-
-function toggleMenu() {
-  document.getElementById('uMenu').classList.toggle('open');
-}
-document.addEventListener('click', function(e){
-  if (!e.target.closest('.u-wrap')) document.getElementById('uMenu').classList.remove('open');
-});
-
+function toggleMenu() { document.getElementById('uMenu').classList.toggle('open'); }
+document.addEventListener('click', function(e){ if (!e.target.closest('.u-wrap')) document.getElementById('uMenu').classList.remove('open'); });
 function updateNav() {
-  var av  = document.getElementById('uAvatar');
-  var bs  = document.getElementById('btnSignup');
-  var bl  = document.querySelector('.btn-login');
+  var av=document.getElementById('uAvatar');
+  var bs=document.getElementById('btnSignup');
+  var bl=document.querySelector('.btn-login');
   if (currentUser) {
-    av.textContent = currentUser.first ? currentUser.first[0].toUpperCase() : '👤';
+    av.textContent=currentUser.first?currentUser.first[0].toUpperCase():'👤';
     av.classList.add('show');
-    document.getElementById('uMenuName').textContent = currentUser.name;
-    if (bs) bs.style.display = 'none';
-    if (bl) bl.style.display = 'none';
+    document.getElementById('uMenuName').textContent=currentUser.name;
+    if (bs) bs.style.display='none'; if (bl) bl.style.display='none';
   } else {
     av.classList.remove('show');
-    if (bs) bs.style.display = '';
-    if (bl) bl.style.display = '';
+    if (bs) bs.style.display=''; if (bl) bl.style.display='';
   }
 }
 
-// ═══════════════════════════════════════════════
-// PROFILE
-// ═══════════════════════════════════════════════
+// ═══ PROFILE ═══
 function showProfile() {
   if (!currentUser) { openAuth('login'); return; }
   document.getElementById('uMenu').classList.remove('open');
-  document.getElementById('mainWrap').style.display = 'none';
+  document.getElementById('mainWrap').style.display='none';
   document.getElementById('profileSec').classList.add('show');
-  document.getElementById('pAvatar').textContent = currentUser.first ? currentUser.first[0].toUpperCase() : '👤';
-  document.getElementById('pName').textContent = currentUser.name;
-  document.getElementById('pEmail').textContent = currentUser.email;
-  var reps = [];
-  try { reps = JSON.parse(localStorage.getItem('fpdf_reports') || '[]'); } catch(e){}
-  var rl = document.getElementById('repList');
-  if (!reps.length) { rl.innerHTML = '<p style="color:var(--mut);font-size:.84rem">No reports submitted yet.</p>'; return; }
-  rl.innerHTML = '';
+  document.getElementById('pAvatar').textContent=currentUser.first?currentUser.first[0].toUpperCase():'👤';
+  document.getElementById('pName').textContent=currentUser.name;
+  document.getElementById('pEmail').textContent=currentUser.email;
+  var reps=[]; try { reps=JSON.parse(localStorage.getItem('fpdf_reports')||'[]'); } catch(e){}
+  var rl=document.getElementById('repList');
+  if (!reps.length) { rl.innerHTML='<p style="color:var(--mut);font-size:.84rem">No reports submitted yet.</p>'; return; }
+  rl.innerHTML='';
   reps.slice().reverse().forEach(function(r){
-    var d = document.createElement('div');
-    d.className = 'rep-entry';
-    d.innerHTML = '<div class="re-info"><div class="re-tool">' + r.tool + '</div><div class="re-meta">' + r.type + ' · ' + r.date + '</div>' + (r.desc ? '<div class="re-desc">' + r.desc + '</div>' : '') + '</div><span class="re-badge">Pending</span>';
+    var d=document.createElement('div'); d.className='rep-entry';
+    d.innerHTML='<div class="re-info"><div class="re-tool">'+r.tool+'</div><div class="re-meta">'+r.type+' · '+r.date+'</div>'+(r.desc?'<div class="re-desc">'+r.desc+'</div>':'')+'</div><span class="re-badge">Pending</span>';
     rl.appendChild(d);
   });
 }
+function showMain() { document.getElementById('mainWrap').style.display=''; document.getElementById('profileSec').classList.remove('show'); }
 
-function showMain() {
-  document.getElementById('mainWrap').style.display = '';
-  document.getElementById('profileSec').classList.remove('show');
-}
-
-// ═══════════════════════════════════════════════
-// REPORT
-// ═══════════════════════════════════════════════
+// ═══ REPORT ═══
 function openRep(e, toolName) {
-  e.stopPropagation();
-  repToolName = toolName;
-  document.getElementById('repSub').textContent = 'Reporting issue with: ' + toolName;
-  document.getElementById('rDesc').value = '';
-  document.getElementById('rEmail').value = currentUser ? currentUser.email : '';
+  e.stopPropagation(); repToolName=toolName;
+  document.getElementById('repSub').textContent='Reporting issue with: '+toolName;
+  document.getElementById('rDesc').value='';
+  document.getElementById('rEmail').value=currentUser?currentUser.email:'';
   document.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('sel'); });
-  document.getElementById('repOv').classList.add('active');
-  document.body.style.overflow = 'hidden';
+  document.getElementById('repOv').classList.add('active'); document.body.style.overflow='hidden';
 }
-function closeRep() { document.getElementById('repOv').classList.remove('active'); document.body.style.overflow = ''; }
+function closeRep() { document.getElementById('repOv').classList.remove('active'); document.body.style.overflow=''; }
 function pickChip(el) { document.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('sel'); }); el.classList.add('sel'); }
-
 async function submitRep() {
-  var chip = document.querySelector('.chip.sel');
-  var type = chip ? chip.textContent : '';
-  var desc = (document.getElementById('rDesc').value || '').trim();
-  var email = (document.getElementById('rEmail').value || '').trim();
-  if (!type) { toast('Please select an issue type!', 'err'); return; }
-  var btn = document.getElementById('repSubmitBtn');
-  btn.disabled = true; btn.textContent = 'Sending...';
+  var chip=document.querySelector('.chip.sel');
+  var type=chip?chip.textContent:'';
+  var desc=(document.getElementById('rDesc').value||'').trim();
+  var email=(document.getElementById('rEmail').value||'').trim();
+  if (!type) { toast('Please select an issue type!','err'); return; }
+  var btn=document.getElementById('repSubmitBtn');
+  btn.disabled=true; btn.textContent='Sending...';
   try {
-    await fetch('https://formspree.io/f/mlgpvjqg', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({tool:repToolName, type:type, description:desc, email:email||'anonymous', date:new Date().toLocaleDateString()})
-    });
+    await fetch('https://formspree.io/f/mlgpvjqg',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({tool:repToolName,type:type,description:desc,email:email||'anonymous',date:new Date().toLocaleDateString()})});
   } catch(e){}
-  var all = [];
-  try { all = JSON.parse(localStorage.getItem('fpdf_reports') || '[]'); } catch(e){}
-  all.push({tool:repToolName, type:type, desc:desc, email:email||'anonymous', date:new Date().toLocaleDateString()});
-  localStorage.setItem('fpdf_reports', JSON.stringify(all));
-  closeRep();
-  toast('✅ Report submitted for "' + repToolName + '"! Thank you.', 'ok');
-  btn.disabled = false; btn.textContent = 'Submit Report';
+  var all=[]; try { all=JSON.parse(localStorage.getItem('fpdf_reports')||'[]'); } catch(e){}
+  all.push({tool:repToolName,type:type,desc:desc,email:email||'anonymous',date:new Date().toLocaleDateString()});
+  localStorage.setItem('fpdf_reports',JSON.stringify(all));
+  closeRep(); toast('✅ Report submitted! Thank you.','ok');
+  btn.disabled=false; btn.textContent='Submit Report';
 }
 
-// ═══════════════════════════════════════════════
-// TOAST
-// ═══════════════════════════════════════════════
+// ═══ TOAST ═══
 function toast(msg, type) {
-  type = type || 'info';
-  var icons = {ok:'✅', err:'❌', info:'ℹ️'};
-  var el = document.createElement('div');
-  el.className = 'toast t-' + type;
-  el.innerHTML = '<span>' + (icons[type]||'ℹ️') + '</span><span>' + msg + '</span>';
+  type=type||'info';
+  var icons={ok:'✅',err:'❌',info:'ℹ️'};
+  var el=document.createElement('div'); el.className='toast t-'+type;
+  el.innerHTML='<span>'+(icons[type]||'ℹ️')+'</span><span>'+msg+'</span>';
   document.getElementById('toastWrap').appendChild(el);
-  setTimeout(function(){ if (el.parentNode) el.parentNode.removeChild(el); }, 4000);
+  setTimeout(function(){ if (el.parentNode) el.parentNode.removeChild(el); },4000);
 }
 </script>
-  <script>
+<script>
 if (window.matchMedia('(display-mode: standalone)').matches) {
-  document.querySelectorAll('.ad-banner').forEach(function(ad){
-    ad.style.display = 'none';
-  });
+  document.querySelectorAll('.ad-banner').forEach(function(ad){ ad.style.display='none'; });
 }
-if('serviceWorker' in navigator){
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js')
-  .then(()=>console.log('PWA Ready!'))
-  .catch(e=>console.log('SW Error:',e));
+  .then(function(){ console.log('PWA Ready!'); })
+  .catch(function(e){ console.log('SW Error:',e); });
 }
 </script>
 </body>
