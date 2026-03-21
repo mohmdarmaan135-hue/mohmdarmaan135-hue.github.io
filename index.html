@@ -11,7 +11,7 @@
 <meta name="keywords" content="free pdf converter,pdf to word,pdf to jpg,image compress,resize image,freepdfconverterr,merge pdf,split pdf,rotate pdf,watermark pdf,jpg to png,png to jpg,online pdf tools"/>
 <meta name="author" content="Freepdfconverterr"/>
 <meta charset="UTF-8"/>
-<meta name="google-site-verification" content="5ZxCmC9IahybqzrrNd2T9PtoRazD18AYYd9qR8jo1Xk" />
+<meta name="google-site-verification" content="5ZxCmC9IahybqzrrNd2T9PtoRazD18AYYd9qR8jo1Xk"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Freepdfconverterr — Free PDF &amp; Image Tools Online</title>
 <meta name="description" content="Free online PDF and Image tools. Merge, split, compress, rotate, watermark, convert PDF and images. No signup required. 100% browser based."/>
@@ -445,7 +445,7 @@ var TOOLS = [
   {id:'watermarkpdf',cat:'pdf',   icon:'💧', bg:'rgba(255,77,0,0.12)',   badge:'free', label:'Free',       name:'Watermark PDF',        desc:'Stamp custom text watermark on every PDF page.',     accept:'.pdf', multi:false, opts:'wmpdf'},
   {id:'pagenumbers', cat:'pdf',   icon:'🔢', bg:'rgba(77,143,255,0.12)', badge:'new',  label:'✨ New',      name:'Add Page Numbers',     desc:'Add page numbers to every page of your PDF.',        accept:'.pdf', multi:false, opts:'pagenum'},
   {id:'grayscalepdf',cat:'pdf',   icon:'⬛', bg:'rgba(150,150,150,0.1)', badge:'new',  label:'✨ New',      name:'Grayscale PDF',        desc:'Convert a colorful PDF to black and white.',         accept:'.pdf', multi:false, opts:'none'},
-  {id:'protectpdf',  cat:'pdf',   icon:'🔒', bg:'rgba(255,77,0,0.1)',    badge:'new',  label:'✨ New',      name:'Protect PDF',          desc:'Add a password to lock and protect your PDF.',       accept:'.pdf', multi:false, opts:'protect'},
+  {id:'reorderpdf',  cat:'pdf',   icon:'🔀', bg:'rgba(255,77,0,0.1)',    badge:'new',  label:'✨ New',      name:'Reverse PDF Pages',    desc:'Reverse the order of all pages in your PDF.',        accept:'.pdf', multi:false, opts:'none'},
   // IMAGE
   {id:'imgcompress', cat:'image', icon:'🗜️',bg:'rgba(0,229,160,0.12)',  badge:'hot',  label:'🔥 Popular', name:'Compress Image',       desc:'Reduce image size by choosing a quality level.',     accept:'image/*', multi:false, opts:'quality'},
   {id:'resize',      cat:'image', icon:'📐', bg:'rgba(77,143,255,0.12)', badge:'free', label:'Free',       name:'Resize Image',         desc:'Resize image to exact pixel dimensions.',            accept:'image/*', multi:false, opts:'resize'},
@@ -555,7 +555,6 @@ function getOptsHTML(opts) {
   if (opts === 'rotate')     return '<div class="opts"><div class="opts-title">⚙️ Options</div><label>Rotation Angle</label><select id="optRot"><option value="90">90° Clockwise ↻</option><option value="180">180° Flip</option><option value="270">270° Counter-clockwise ↺</option></select></div>';
   if (opts === 'wmpdf')      return '<div class="opts"><div class="opts-title">⚙️ Watermark Settings</div><label>Watermark Text</label><input type="text" id="optWM" placeholder="e.g. CONFIDENTIAL" value="WATERMARK"/><label>Font Size</label><input type="number" id="optWMSize" value="48" min="12" max="120"/></div>';
   if (opts === 'pagenum')    return '<div class="opts"><div class="opts-title">⚙️ Page Number Settings</div><label>Position</label><select id="optPNPos"><option value="bottom-center">Bottom Center</option><option value="bottom-right">Bottom Right</option><option value="bottom-left">Bottom Left</option><option value="top-center">Top Center</option></select><label>Starting Number</label><input type="number" id="optPNStart" value="1" min="1"/></div>';
-  if (opts === 'protect')    return '<div class="opts"><div class="opts-title">🔒 Password Protection</div><label>Password</label><input type="password" id="optPwd" placeholder="Enter password"/><label>Confirm Password</label><input type="password" id="optPwd2" placeholder="Confirm password"/><p style="color:var(--mut);font-size:.75rem;margin-top:.3rem">⚠️ Browser-based encryption. For strong security use Adobe Acrobat.</p></div>';
   if (opts === 'resize')     return '<div class="opts"><div class="opts-title">⚙️ New Size</div><div class="row2"><div><label>Width (px)</label><input type="number" id="optW" placeholder="e.g. 800"/></div><div><label>Height (px)</label><input type="number" id="optH" placeholder="e.g. 600"/></div></div><label>Keep Aspect Ratio</label><select id="optAR"><option value="1">Yes — keep proportions</option><option value="0">No — use exact values</option></select></div>';
   if (opts === 'crop')       return '<div class="opts"><div class="opts-title">⚙️ Crop Area</div><div class="row2"><div><label>X — Left (px)</label><input type="number" id="optX" value="0" min="0"/></div><div><label>Y — Top (px)</label><input type="number" id="optY" value="0" min="0"/></div></div><div class="row2"><div><label>Crop Width (px)</label><input type="number" id="optCW" placeholder="full width"/></div><div><label>Crop Height (px)</label><input type="number" id="optCH" placeholder="full height"/></div></div></div>';
   if (opts === 'wmimg')      return '<div class="opts"><div class="opts-title">⚙️ Watermark Settings</div><label>Watermark Text</label><input type="text" id="optIMGWM" placeholder="© Your Name" value="© Freepdfconverterr"/><label>Text Color</label><select id="optWMC"><option value="white">White</option><option value="black">Black</option><option value="#ff4d00">Orange</option><option value="#00e5a0">Green</option></select><label>Opacity</label><div class="qrow"><input type="range" id="optWMO" min="10" max="90" value="50" oninput="document.getElementById(\'wmov\').textContent=this.value+\'%\'"/><span class="qval" id="wmov">50%</span></div></div>';
@@ -691,7 +690,7 @@ async function runTool() {
       case 'watermarkpdf':await tWatermarkPDF();break;
       case 'pagenumbers': await tPageNumbers(); break;
       case 'grayscalepdf':await tGrayscalePDF();break;
-      case 'protectpdf':  await tProtectPDF();  break;
+      case 'reorderpdf':  await tReorderPDF();  break;
       case 'imgcompress': await tCompress();    break;
       case 'resize':      await tResize();      break;
       case 'crop':        await tCrop();        break;
@@ -871,18 +870,18 @@ async function tGrayscalePDF() {
   showResults([{name:'grayscale.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
 }
 
-async function tProtectPDF() {
-  var pwd = document.getElementById('optPwd').value;
-  var pwd2 = document.getElementById('optPwd2').value;
-  if (!pwd) { toast('Please enter a password!','err'); return; }
-  if (pwd !== pwd2) { toast('Passwords do not match!','err'); return; }
+async function tReorderPDF() {
   setP(10,'Loading PDF...'); var PDFDoc = PDFLib.PDFDocument;
   var buf = await toolFiles[0].arrayBuffer(); var doc = await PDFDoc.load(buf);
-  setP(60,'Applying protection...');
-  var bytes = await doc.save();
-  setP(100,'Done! ✅');
-  showResults([{name:'protected.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
-  toast('⚠️ Note: For strong PDF encryption use Adobe Acrobat.','info');
+  var total = doc.getPageCount();
+  setP(40,'Reversing '+total+' pages...');
+  var newDoc = await PDFDoc.create();
+  var indices = [];
+  for (var i = total-1; i >= 0; i--) indices.push(i);
+  var pages = await newDoc.copyPages(doc, indices);
+  pages.forEach(function(p){ newDoc.addPage(p); });
+  setP(90,'Saving...'); var bytes = await newDoc.save();
+  showResults([{name:'reversed.pdf', size:fmtSize(bytes.length), url:URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}))}]);
 }
 
 // ═══ IMAGE TOOLS ═══
