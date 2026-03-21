@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-NT288WP4YR');
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7352879981287034" crossorigin="anonymous"></script>
@@ -44,6 +43,8 @@ h2{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:1r
 .btn-submit:disabled{opacity:.4;cursor:not-allowed}
 .success-msg{display:none;background:rgba(0,229,160,.1);border:1px solid rgba(0,229,160,.3);border-radius:10px;padding:1rem;text-align:center;color:var(--ok);font-size:.9rem;margin-top:1rem}
 .success-msg.show{display:block}
+.error-msg{display:none;background:rgba(255,77,0,.1);border:1px solid rgba(255,77,0,.3);border-radius:10px;padding:1rem;text-align:center;color:var(--acc);font-size:.9rem;margin-top:1rem}
+.error-msg.show{display:block}
 .info-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:1.2rem;margin-bottom:.7rem;display:flex;align-items:center;gap:1rem}
 .info-icon{font-size:1.5rem;flex-shrink:0}
 .info-title{font-size:.85rem;font-weight:700;margin-bottom:.15rem}
@@ -59,6 +60,7 @@ footer a{color:var(--acc);text-decoration:none}
   <a class="logo" href="index.html">Free<span>PDFConverterr</span></a>
   <div class="nav-links">
     <a href="index.html">🏠 Home</a>
+    <a href="blog.html">📝 Blog</a>
     <a href="about.html">About</a>
     <a href="privacy-policy.html">Privacy</a>
   </div>
@@ -104,6 +106,7 @@ footer a{color:var(--acc);text-decoration:none}
     </div>
     <button class="btn-submit" id="submitBtn" onclick="submitContact()">Send Message 🚀</button>
     <div class="success-msg" id="successMsg">✅ Message sent successfully! We'll get back to you soon.</div>
+    <div class="error-msg" id="errorMsg">❌ Something went wrong. Please try again!</div>
   </div>
 </div>
 
@@ -112,7 +115,8 @@ footer a{color:var(--acc);text-decoration:none}
   <span style="margin-top:.3rem;display:block">© 2026 Freepdfconverterr ·
     <a href="privacy-policy.html">Privacy Policy</a> ·
     <a href="terms.html">Terms of Service</a> ·
-    <a href="contact.html">Contact</a>
+    <a href="contact.html">Contact</a> ·
+    <a href="blog.html">Blog</a>
   </span>
 </footer>
 
@@ -122,20 +126,41 @@ async function submitContact() {
   var email   = document.getElementById('cEmail').value.trim();
   var subject = document.getElementById('cSubject').value;
   var msg     = document.getElementById('cMsg').value.trim();
+
+  // Validation
   if (!name || !email || !subject || !msg) {
     alert('Please fill in all fields!'); return;
   }
+  if (!email.includes('@') || !email.includes('.')) {
+    alert('Please enter a valid email address!'); return;
+  }
+
   var btn = document.getElementById('submitBtn');
-  btn.disabled = true; btn.textContent = 'Sending...';
+  var successMsg = document.getElementById('successMsg');
+  var errorMsg = document.getElementById('errorMsg');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  successMsg.classList.remove('show');
+  errorMsg.classList.remove('show');
+
   try {
-    await fetch('https://formspree.io/f/mlgpvjqg', {
+    var response = await fetch('https://formspree.io/f/mlgpvjqg', {
       method: 'POST',
       headers: {'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify({name:name, email:email, subject:subject, message:msg, date:new Date().toLocaleDateString()})
     });
-  } catch(e){}
-  btn.style.display = 'none';
-  document.getElementById('successMsg').classList.add('show');
+    if (response.ok) {
+      btn.style.display = 'none';
+      successMsg.classList.add('show');
+    } else {
+      throw new Error('Server error');
+    }
+  } catch(e) {
+    errorMsg.classList.add('show');
+    btn.disabled = false;
+    btn.textContent = 'Send Message 🚀';
+  }
 }
 </script>
 </body>
