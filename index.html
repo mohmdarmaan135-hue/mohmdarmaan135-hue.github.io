@@ -1191,13 +1191,12 @@ function toast(msg, type) {
   setTimeout(function(){ if (el.parentNode) el.parentNode.removeChild(el); }, 4000);
 }
 </script>
-<script>
+  <script>
 if (window.matchMedia('(display-mode: standalone)').matches) {
   document.querySelectorAll('.ad-banner').forEach(function(ad){
     ad.style.display = 'none';
   });
 }
-
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('/sw.js')
   .then(()=>console.log('PWA Ready!'))
