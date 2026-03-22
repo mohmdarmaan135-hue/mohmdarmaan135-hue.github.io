@@ -5,13 +5,13 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta name="theme-color" content="#ff4d00"/>
-<title>Freepdfconverterr — Free PDF &amp; Image Tools Online</title>
+<title>PDFSnap — Free PDF &amp; Image Tools Online</title>
 <meta name="description" content="Free online PDF and Image tools. Merge, split, compress, rotate, watermark, convert PDF and images. No signup required. 100% browser based."/>
-<meta name="keywords" content="free pdf converter,pdf to word,pdf to jpg,image compress,resize image,freepdfconverterr,merge pdf,split pdf,rotate pdf,watermark pdf,jpg to png,png to jpg,online pdf tools"/>
-<meta name="author" content="Freepdfconverterr"/>
+<meta name="keywords" content="free pdf converter,pdf to word,pdf to jpg,image compress,resize image,pdfsnap,merge pdf,split pdf,rotate pdf,watermark pdf,jpg to png,png to jpg,online pdf tools"/>
+<meta name="author" content="PDFSnap"/>
 <meta name="google-site-verification" content="5ZxCmC9IahybqzrrNd2T9PtoRazD18AYYd9qR8jo1Xk"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-title" content="FreePDF"/>
+<meta name="apple-mobile-web-app-title" content="PDFSnap"/>
 <!-- Preconnect to speed up third-party resources -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -389,7 +389,7 @@ footer strong{color:var(--txt)}
     <p class="hero-sub">All processing happens on your device. No account needed, no watermark, no limits — forever free.</p>
     <div class="hero-btns">
       <a href="#tools" style="display:inline-block;background:var(--acc);color:#fff;padding:.7rem 1.8rem;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;">🚀 Use Free Tools</a>
-      <a href="app.apk" download="FreePDFConverterr.apk" class="btn-green">📱 Download App (Android)</a>
+      <a href="app.apk" download="PDFSnap.apk" class="btn-green">📱 Download App (Android)</a>
     </div>
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
@@ -541,8 +541,8 @@ footer strong{color:var(--txt)}
 </div>
 
 <footer>
-  <strong>Freepdfconverterr</strong> — All tools run entirely in your browser. No files uploaded to any server.<br/>
-  <span style="margin-top:.3rem;display:block">© 2026 Freepdfconverterr · <a href="blog.html" style="color:#ff4d00;text-decoration:none;">Blog</a> · <a href="privacy-policy.html" style="color:#ff4d00;text-decoration:none;">Privacy Policy</a> · <a href="about.html" style="color:#ff4d00;text-decoration:none;">About</a> · <a href="contact.html" style="color:#ff4d00;text-decoration:none;">Contact</a></span>
+  <strong>PDFSnap</strong> — All tools run entirely in your browser. No files uploaded to any server.<br/>
+  <span style="margin-top:.3rem;display:block">© 2026 PDFSnap · <a href="blog.html" style="color:#ff4d00;text-decoration:none;">Blog</a> · <a href="privacy-policy.html" style="color:#ff4d00;text-decoration:none;">Privacy Policy</a> · <a href="about.html" style="color:#ff4d00;text-decoration:none;">About</a> · <a href="contact.html" style="color:#ff4d00;text-decoration:none;">Contact</a></span>
 </footer>
 
 <script>
@@ -898,7 +898,7 @@ function getOptsHTML(opts) {
   if (opts === 'wmimg') return `
     <div class="opts"><div class="opts-title">⚙️ Image Watermark Options</div>
       <label>Watermark Text</label>
-      <input type="text" id="optIMGWM" placeholder="© Your Name" value="© Freepdfconverterr"/>
+      <input type="text" id="optIMGWM" placeholder="© Your Name" value="© PDFSnap"/>
       <div class="row2">
         <div><label>Position</label>
           <select id="optWMPos">
@@ -1560,7 +1560,7 @@ async function tWatermarkImg() {
   var img = await loadImgEl(toolFiles[0]);
   var c = document.createElement('canvas'); c.width=img.width; c.height=img.height;
   var ctx = c.getContext('2d'); ctx.drawImage(img,0,0);
-  var text    = (document.getElementById('optIMGWM').value||'\xa9 Freepdfconverterr').trim();
+  var text    = (document.getElementById('optIMGWM').value||'\xa9 PDFSnap').trim();
   var color   = document.getElementById('optWMC').value||'white';
   var opacity = parseInt(document.getElementById('optWMO').value)/100 || 0.5;
   var wpos    = document.getElementById('optWMPos') ? document.getElementById('optWMPos').value : 'center';
@@ -1904,7 +1904,7 @@ var _shareUrl = '';
 var _shareText = '';
 function shareTool(e, toolId, toolName) {
   e.stopPropagation();
-  var url = 'https://freepdfconverterr.github.io/#'+toolId;
+  var url = 'https://pdfsnap.github.io/#'+toolId;
   var text = 'Use this free '+toolName+' tool — no signup, no upload, 100% private!';
   _shareUrl = url; _shareText = text;
   document.getElementById('shareUrlInput').value = url;
@@ -1926,7 +1926,7 @@ function copyShareUrl() {
 }
 function nativeShare() {
   if (navigator.share) {
-    navigator.share({title:'Freepdfconverterr — Free Tools', text:_shareText, url:_shareUrl})
+    navigator.share({title:'PDFSnap — Free Tools', text:_shareText, url:_shareUrl})
       .then(function(){ closeShare(); })
       .catch(function(){});
   } else { copyShareUrl(); }

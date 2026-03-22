@@ -1,7 +1,7 @@
-// Freepdfconverterr Service Worker
+// PDFSnap Service Worker
 // Version 4.0
 
-const CACHE_NAME = 'freepdfconverterr-v11';
+const CACHE_NAME = 'pdfsnap-v1';
 const ASSETS = [
   '/',
   '/index.html',
@@ -27,7 +27,7 @@ const ASSETS = [
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
-      console.log('Freepdfconverterr: Caching files...');
+      console.log('PDFSnap: Caching files...');
       return cache.addAll(ASSETS);
     })
   );
@@ -42,7 +42,7 @@ self.addEventListener('activate', function(event) {
         cacheNames.filter(function(name) {
           return name !== CACHE_NAME;
         }).map(function(name) {
-          console.log('Freepdfconverterr: Deleting old cache:', name);
+          console.log('PDFSnap: Deleting old cache:', name);
           return caches.delete(name);
         })
       );
