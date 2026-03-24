@@ -1,7 +1,7 @@
 // PDFSnap Service Worker
 // Version 4.0
 
-const CACHE_NAME = 'pdfsnap-v3';
+const CACHE_NAME = 'pdfsnap-v4';
 const ASSETS = [
   '/',
   '/index.html',
