@@ -74,6 +74,9 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .side-divider{height:1px;background:var(--bdr);margin:.4rem .8rem}
 .side-footer{margin-top:auto;padding:1rem 1.4rem;border-top:1px solid var(--bdr)}
 .side-footer p{font-size:.72rem;color:var(--mut);line-height:1.5}
+.side-blog-link{display:flex;align-items:center;gap:.65rem;padding:.5rem .7rem;border-radius:10px;text-decoration:none;color:var(--mut);font-size:.82rem;font-weight:500;transition:all .2s;line-height:1.35}
+.side-blog-link:hover{background:rgba(255,77,0,.08);color:var(--acc)}
+.side-blog-num{min-width:20px;height:20px;border-radius:5px;background:rgba(255,77,0,.15);color:var(--acc);font-size:.67rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .logo{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--txt);text-decoration:none;cursor:pointer}
 .logo span{color:var(--acc)}
 .nav-r{display:flex;align-items:center;gap:.6rem}
@@ -312,7 +315,14 @@ footer strong{color:var(--txt)}
   <div class="side-section">
     <div class="side-section-title">Main</div>
     <a class="side-link" href="index.html"><span class="sl-icon">🏠</span> Home</a>
-    <a class="side-link" href="blog.html"><span class="sl-icon">📝</span> Blog</a>
+    <a class="side-link" href="blog.html"><span class="sl-icon">📝</span> All Blogs</a>
+  </div>
+
+  <div class="side-divider"></div>
+
+  <div class="side-section">
+    <div class="side-section-title">Latest Blog Posts</div>
+    <div id="sideMenuBlogs"><!-- auto-populated --></div>
   </div>
 
   <div class="side-divider"></div>
@@ -1791,6 +1801,32 @@ function closeSideMenu() {
 document.addEventListener('keydown', function(e){
   if (e.key==='Escape') closeSideMenu();
 });
+
+// ═══ AUTO-POPULATE BLOG LIST IN SIDE MENU ═══
+// To add a new blog: just append one line to this array — no other changes needed.
+(function(){
+  var BLOGS = [
+    {num:9, title:"Compress PDF Without Losing Quality", file:"blog-9.html"},
+    {num:8, title:"Convert JPG to PDF Free",             file:"blog-8.html"},
+    {num:7, title:"Watermark PDF Files",                 file:"blog-7.html"},
+    {num:6, title:"JPG vs PNG vs WebP",                  file:"blog-6.html"},
+    {num:5, title:"Split PDF Files Like a Pro",          file:"blog-5.html"},
+    {num:4, title:"Resize Images the Right Way",         file:"blog-4.html"},
+    {num:3, title:"PDF to JPG Conversion Guide",         file:"blog-3.html"},
+    {num:2, title:"Compress Images by 80%",              file:"blog-2.html"},
+    {num:1, title:"Merging PDF Files for Free",          file:"blog-1.html"}
+  ];
+  var container = document.getElementById('sideMenuBlogs');
+  if (!container) return;
+  BLOGS.forEach(function(b){
+    var a = document.createElement('a');
+    a.className = 'side-blog-link';
+    a.href = b.file;
+    a.onclick = function(){ closeSideMenu(); };
+    a.innerHTML = '<span class="side-blog-num">'+b.num+'</span>'+b.title;
+    container.appendChild(a);
+  });
+})();
 
 // ═══ AUTH ═══
 function openAuth(tab) { switchTab(tab); document.getElementById('authOv').classList.add('active'); document.body.style.overflow='hidden'; }
